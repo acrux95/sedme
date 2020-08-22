@@ -1,0 +1,18 @@
+
+doctype html
+html    
+    head
+        title #{page}
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, maximum-scale=1.0, user-scalable=no')
+        block styles
+    body
+        include ../components/navbar/navbar.pug
+        .content-box
+            include ../components/sidebar/sidebar
+            .container
+                .container__header
+                    h1 
+                        block title
+                block content

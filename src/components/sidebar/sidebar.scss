@@ -1,0 +1,28 @@
+@import '../../utils/variables.scss';
+
+.sidebar{
+    // position: fixed;
+    width: 270px;
+    min-width: 230px;
+    height: 95vh;
+    background-color:$secondaryColor;
+    padding:16px;
+    img{
+        width: 100%;
+    }
+    ul {
+        list-style-type: none;
+        li{
+            font-weight: bold;
+            padding:8px;
+        }
+      }
+    .toggle-btn{
+        position: absolute;
+        left: 230px;
+        top:4px;
+        cursor: pointer;
+        font-size: 30px;
+        color:white;
+    }
+}
