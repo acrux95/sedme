@@ -1,26 +1,28 @@
 @import "./variables.scss";
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   font-family: $fontFamily;
 }
 
+.content-box {
+  display: flex;
+  width: 100%;
+  background-color: $backgroudColor;
+}
+
 .container {
   padding: 18px;
+  width: 100%;
   &__header {
     display: flex;
     justify-content: center;
     padding-bottom: 8px;
     color: $primaryDark;
   }
-}
-
-.content-box {
-  display: flex;
-  background-color: $backgroudColor;
 }

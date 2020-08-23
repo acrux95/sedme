@@ -1,9 +1,15 @@
-nav
-    ul.logo
+nav.header
+    ul.header__logo
         li
-            a(href='#') SEDME
+            a(href='index.html') SEDME
 
-    ul.user
-        li
-            a(href='#') USUARIO X
+    .header__menu
+        .header__menu--profile
+            img(src="src/img/user.png" alt="")
+            span Usuario X
+            ul
+                li
+                    a(href='#') Perfil
+                li
+                    a(href="#") Cerrar Sesión
 
