@@ -1,0 +1,55 @@
+@import "../../utils/variables.scss";
+
+@mixin task {
+  padding: 2px;
+  margin: 2px;
+  width: 100%;
+}
+
+.calendar {
+  height: 500px;
+  width: 100%;
+  background-color: $secondaryColor;
+
+  &__header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+  &__title {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  &__day {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
+    border-width: 5px;
+    background-color: $backgroudColor;
+    &--current {
+      border-style: dashed;
+      border-color: $successColor;
+      background-color: $backgroudColor;
+    }
+  }
+  &__task {
+    width: 100%;
+    background-color: coral;
+    &--danger {
+      @include task;
+      background-color: $errorColor;
+    }
+    &--success {
+      @include task;
+      background-color: $successColor;
+    }
+  }
+}

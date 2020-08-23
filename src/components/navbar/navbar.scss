@@ -1,0 +1,60 @@
+@import "../../utils/variables.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background: $primaryColor;
+  padding: 0 16px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  &__logo {
+    width: 270px;
+    font-size: 16px;
+    li {
+      list-style: none;
+    }
+    a {
+      color: $successColor;
+      font-size: 26px;
+    }
+  }
+
+  &__menu {
+    margin-left: auto;
+    list-style-type: none;
+    justify-self: end;
+    color: white;
+    &:hover{
+      display: block;
+    }
+    &--profile {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 8px;
+      img{
+        margin-right:8px ;
+      }
+    }
+    ul {
+      background-color: $primaryColor;
+      // display: none;
+      list-style: none;
+      top:55px;
+      right: 18px;
+      padding: 12px;
+      position: absolute;
+      width: 130px;
+      text-align: right;
+      &:hover{
+        display: block;
+        opacity: .5;
+      }
+    }
+  }
+}
