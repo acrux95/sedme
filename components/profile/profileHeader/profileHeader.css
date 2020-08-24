@@ -1,0 +1,80 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: aqua;
+}
+header h1 {
+  padding-left: 10%;
+  font-size: 20px;
+  color: white;
+}
+header img {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.header__image {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+}
+
+.sidebar {
+  float: left;
+  width: 15%;
+  background: lightgray;
+  height: 92vh;
+}
+.sidebar ul li {
+  color: white;
+  list-style: none;
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid #dbc5c5;
+}
+
+.datePersonals {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  line-height: 40px;
+}
+.datePersonals img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100px;
+}
+.datePersonals h2 {
+  margin-left: 20%;
+}
+.datePersonals .datePersonals__img {
+  display: flex;
+  justify-content: center;
+  margin-right: 5%;
+  align-items: flex-end;
+  margin: 0 auto;
+}
+
+.cursos {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  width: 50vw;
+  margin-left: 35%;
+}
+.cursos p {
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: lightgray;
+}
+.cursos h3 {
+  margin-left: 38%;
+}
