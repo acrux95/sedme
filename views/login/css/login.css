@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@200;300;400&display=swap");
+.loginScreen {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 10vh 80vh 10vh;
+}
+
+.navBar {
+  grid-row: 1/2;
+  height: 50px;
+  border-style: solid;
+  border-width: 0.7px 2.5px 2.5px 0.7px;
+  border-color: #130338;
+  background: #7ab0e2;
+  display: flex;
+  align-items: center;
+}
+.navBar .title {
+  margin: 0 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #faf9f6;
+}
+
+.mainContainer {
+  grid-row: 2/3;
+  align-self: center;
+  justify-self: center;
+  width: 40vw;
+  height: 60vh;
+  border: 1px solid #130338;
+  box-shadow: 20px 20px 20px 10px #7ab0e2;
+  border-radius: 10%;
+  display: grid;
+  grid-template-columns: 20% 20% 40% 20%;
+  grid-template-areas: ". logo logo ." ". user inputuser ." ". password inputpassword ." ". button button ." ". recover recover .";
+}
+.mainContainer .mainLogo {
+  grid-area: logo;
+  height: 150px;
+  width: 150px;
+  border-radius: 10%;
+  justify-self: center;
+  align-self: center;
+}
+.mainContainer .user {
+  grid-area: user;
+  margin: 0 20px;
+  align-self: center;
+  justify-self: end;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+.mainContainer .userInput {
+  grid-area: inputuser;
+  height: 30px;
+  align-self: center;
+}
+.mainContainer .password {
+  grid-area: password;
+  margin: 0 20px;
+  align-self: center;
+  justify-self: end;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+}
+.mainContainer .passwordInput {
+  grid-area: inputpassword;
+  height: 30px;
+  align-self: center;
+}
+.mainContainer .enterButton {
+  grid-area: button;
+  background-color: #83ce38;
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+.mainContainer .enterButton:hover {
+  background-color: chartreuse;
+  font-size: 25px;
+  font-weight: 700;
+}
+.mainContainer .passwordRecover {
+  grid-area: recover;
+  color: black;
+  justify-self: center;
+  align-self: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+.mainContainer .passwordRecover:hover {
+  color: darkblue;
+}
+
+.footerBar {
+  grid-row: 3/4;
+  height: 50px;
+  border-style: solid;
+  border-width: 2.5px 0.7px 0.7px 2.5px;
+  border-color: #130338;
+  background: #7ab0e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footerBar .title {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #faf9f6;
+}
