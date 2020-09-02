@@ -1,17 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Muli&display=swap);
 
-:root{
-    --white-color:#ffffff;
-    --very-light-color: #E2E8F0;
-    --main-light-color: #CCD5E0;
-    --main-color: #272C67;
-    --second-color:#E94560;
-    --obscuro-contraste: #272626;
-    --h2-font-size: 36px;
-    --h3-font-size:28px;
-    --h4-font-size:24px;
-    --card-border-radius:15px;
-}
+$white-color:#ffffff;
+$very-light-color: #E2E8F0;
+$main-light-color: #CCD5E0;
+$main-color: #272C67;
+$second-color:#E94560;
+$dark-contrast: #272626;
+$h2-font-size: 36px;
+$h3-font-size:28px;
+$h4-font-size:24px;
+$card-border-radius:15px;
+
 /* Fuente por default*/
 body{
     font-family: Arial, Helvetica, sans-serif;
