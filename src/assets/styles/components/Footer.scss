@@ -1,13 +1,14 @@
 footer {
+    grid-area: footer;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: auto;
     width: 100%;
     height: 50px;
-    background-color: $primary-color;
+    background-color: $main-color;
     color: $white-color;
-    font-size: $h4-font-size;
+    font-size: 24px;
     position: absolute;
     bottom: 0;
 }

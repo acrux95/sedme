@@ -4,6 +4,10 @@
 body {
   font-family: $font;
   color: $text-color;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 80px 100% 80px;
+  grid-template-areas: "menu header" "menu content" "footer footer";
 }
 
 * {

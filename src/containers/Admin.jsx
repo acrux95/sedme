@@ -4,7 +4,7 @@ import Modal from '../components/Modal';
 
 import Table from '../components/Admin/Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faSearch, faclipboardlist, fahatwizard, facalendaralt, fachartbar, fausers, faquestioncircle } from '@fortawesome/free-solid-svg-icons';
 
 const Admin = () => {
   return (
