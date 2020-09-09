@@ -4,9 +4,6 @@ import '../assets/styles/components/Header.scss';
 
 const Header = () => (
   <header className='header'>
-    <Link to='/'>
-      Main
-    </Link>
   </header>
 );
 

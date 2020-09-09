@@ -1,0 +1,33 @@
+@import '../Vars.scss';
+
+table {
+  width: 100%;
+  background-color: $white-color;
+  margin: 8px 0 8px;
+}
+th {
+  color: $main-color;
+}
+
+td {
+  height: 50px;
+  //   text-align: right;
+}
+
+tr {
+  border: 1px solid $main-light-color;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+tr:nth-child(even) {
+  background-color: $very-light-color;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
