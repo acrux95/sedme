@@ -1,0 +1,20 @@
+.navBar {
+    grid-row: 1 / 2;
+    height: 40px;
+    border-style: solid;
+    border-width: .7px 1.5px 1.5px .7px;
+    border-color: $colorBorder1;
+    background: $colorBackground1;
+    /* border-radius: 5px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .title  {
+        
+        font-family: 'Montserrat', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: $colorFont1;
+        }
+}

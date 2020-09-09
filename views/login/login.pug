@@ -4,13 +4,14 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="login.css")
+        link(rel="stylesheet", href="media.css" media="screen and (max-width:1024px)")
         title login Sedme
     
     body.loginScreen
         header.navBar
             p.title SEDME 
+        img.mainLogo(src="img/logo-claro-190x190px-web.png", alt="")
         .mainContainer
-            img.mainLogo(src="img/logoPM.jpeg", alt="")
             p.user User:
             input.userInput(type="text")
             p.password Password:

@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* Colores */
+/* Tamaños de fuente */
+/* Bordes */
+@media screen and (max-width: 321px) {
+  .mainContainer {
+    width: 80vw;
+    grid-template-columns: 10% 30% 50% 10%;
+  }
+  .mainContainer .mainLogo {
+    height: 100px;
+    width: 100px;
+  }
+  .mainContainer .user {
+    font-size: 10px;
+  }
+  .mainContainer .password {
+    font-size: 10px;
+  }
+}

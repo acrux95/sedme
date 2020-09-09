@@ -12,6 +12,7 @@
   border-width: 0.7px 2.5px 2.5px 0.7px;
   border-color: #130338;
   background: #7ab0e2;
+  border-radius: 5px;
   display: flex;
   align-items: center;
 }
@@ -76,12 +77,12 @@
   border-radius: 5px;
   font-family: "Raleway", sans-serif;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 700;
 }
 .mainContainer .enterButton:hover {
   background-color: chartreuse;
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 800;
 }
 .mainContainer .passwordRecover {
   grid-area: recover;
@@ -102,6 +103,7 @@
   border-width: 2.5px 0.7px 0.7px 2.5px;
   border-color: #130338;
   background: #7ab0e2;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,124 +1,139 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@200;300;400&display=swap");
-.loginScreen {
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: 10vh 80vh 10vh;
-}
-
-.navBar {
-  grid-row: 1/2;
-  height: 50px;
-  border-style: solid;
-  border-width: 0.7px 2.5px 2.5px 0.7px;
-  border-color: #130338;
-  background: #7ab0e2;
-  display: flex;
-  align-items: center;
-}
-.navBar .title {
-  margin: 0 20px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-  color: #faf9f6;
-}
-
+/* Colores */
+/* Tamaños de fuente */
+/* Bordes */
 .mainContainer {
-  grid-row: 2/3;
+  grid-row: 3/4;
   align-self: center;
   justify-self: center;
   width: 40vw;
-  height: 60vh;
-  border: 1px solid #130338;
-  box-shadow: 20px 20px 20px 10px #7ab0e2;
-  border-radius: 10%;
+  height: 55vh;
+  background-color: #ffffff;
+  border: 1px solid #CCD5E0;
+  border-radius: 5%;
   display: grid;
-  grid-template-columns: 20% 20% 40% 20%;
-  grid-template-areas: ". logo logo ." ". user inputuser ." ". password inputpassword ." ". button button ." ". recover recover .";
+  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-areas: ". login login ." ". user . ." ". inputuser inputuser ." ". password . ." ". inputpassword inputpassword ." ". button button ." ". recover recover .";
 }
-.mainContainer .mainLogo {
+.mainContainer .loginTitle {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
-  grid-area: logo;
-  height: 150px;
-  width: 150px;
-  border-radius: 10%;
-  justify-self: center;
+  grid-area: login;
+  margin: 0;
   align-self: center;
+  justify-self: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
 }
 .mainContainer .user {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: user;
-  margin: 0 20px;
+  margin: 0;
   align-self: center;
-  justify-self: end;
-  font-family: "Raleway", sans-serif;
-  font-size: 20px;
-}
-.mainContainer .userInput {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  grid-area: inputuser;
-  height: 30px;
-  align-self: center;
-}
-.mainContainer .password {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-  grid-area: password;
-  margin: 0 20px;
-  align-self: center;
-  justify-self: end;
-  font-family: "Raleway", sans-serif;
-  font-size: 20px;
-}
-.mainContainer .passwordInput {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
-  grid-area: inputpassword;
-  height: 30px;
-  align-self: center;
-}
-.mainContainer .enterButton {
-  -ms-grid-row: 4;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-area: button;
-  background-color: #83ce38;
-  border-radius: 5px;
-  font-family: "Raleway", sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-}
-.mainContainer .enterButton:hover {
-  background-color: chartreuse;
-  font-size: 25px;
-  font-weight: 700;
-}
-.mainContainer .passwordRecover {
-  -ms-grid-row: 5;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-area: recover;
-  color: black;
-  justify-self: center;
-  align-self: center;
+  justify-self: start;
   font-family: "Raleway", sans-serif;
   font-size: 15px;
 }
+.mainContainer .userInput {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: inputuser;
+  height: 30px;
+  align-self: center;
+  background-color: #CCD5E0;
+  border: none;
+  border-radius: 5px;
+}
+.mainContainer .password {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: password;
+  margin: 0;
+  align-self: center;
+  justify-self: start;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+}
+.mainContainer .passwordInput {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: inputpassword;
+  height: 30px;
+  align-self: center;
+  background-color: #CCD5E0;
+  border: none;
+  border-radius: 5px;
+}
+.mainContainer .enterButton {
+  -ms-grid-row: 6;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: button;
+  height: 35px;
+  align-self: center;
+  background-color: #272C67;
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+.mainContainer .enterButton:hover {
+  /*  background-color: chartreuse;
+   font-size: 15px;
+   font-weight: 800; */
+}
+.mainContainer .passwordRecover {
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: recover;
+  justify-self: start;
+  align-self: center;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 10px;
+  color: #272626;
+}
 .mainContainer .passwordRecover:hover {
-  color: darkblue;
+  color: #e94560;
+  font-weight: 500;
+}
+
+.navBar {
+  grid-row: 1/2;
+  height: 40px;
+  border-style: solid;
+  border-width: 0.7px 1.5px 1.5px 0.7px;
+  border-color: #130338;
+  background: #272c67;
+  /* border-radius: 5px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navBar .title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #faf9f6;
 }
 
 .footerBar {
-  grid-row: 3/4;
-  height: 50px;
+  grid-row: 4/5;
+  align-self: flex-end;
+  height: 40px;
   border-style: solid;
   border-width: 2.5px 0.7px 0.7px 2.5px;
-  border-color: #130338;
-  background: #7ab0e2;
+  border-color: #272626;
+  background: #272C67;
+  /* border-radius: 5px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,4 +143,18 @@
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   color: #faf9f6;
+}
+
+.loginScreen {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 10vh 15vh 66vh 10vh;
+  background-color: #E2E8F0;
+  margin: 0;
+}
+
+.mainLogo {
+  grid-row: 2/3;
+  justify-self: center;
+  max-width: 100px;
 }
