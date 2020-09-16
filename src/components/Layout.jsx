@@ -1,14 +1,18 @@
-import React from 'react'
-import Header from './Header'
-import Aside from './Aside'
-import Footer from './Footer'
+// Dependencies
+import React from 'react';
+// Components
+import Header from './Header';
+import Aside from './Aside';
+// import Footer from './Footer';
+//Assets
+import '../assets/styles/components/Layout.scss';
 
 const Layout = (props) => (
   <div className='page'>
     <Aside />
     <Header />
     <section className='content'>{props.children}</section>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 )
 
