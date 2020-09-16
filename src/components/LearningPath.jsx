@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 import '../assets/styles/components/LearningPath.scss';
 
 /* 
-Super importante con los checkbox, el id debe corresponder con el for de los label, de lo contrario JAMÁS funcionará correctamente
+Super importante con los checkbox, el id debe corresponder con el for de los label, de lo contrario JAMÁS funcionará correctamente.
+Hay 4 clases para la fecha límite de las metas.
+* on-time: Cuando tiene 2 días o más para presentarlo. En negrita y del mismo color del texto.
+* for-today: Cuando la fecha de entrega es para el día actual. En negrita y color azul.
+* Late: Cuando tiene un día o más de atraso para presentar. En negrita y color rojo.
+* Completed: Se aplica cuando se verifica el checkbox. En negrita y del mismo color del texto.
  */
 const LearningPath = () => (
     <section className="content">
@@ -49,7 +54,7 @@ const LearningPath = () => (
                         <p>Curso de HTML y CSS</p>
                     </div>
                     <div className="goal-date">
-                        <p className="late completed">Martes 08 de Septiembre</p>
+                        <p className="completed">Martes 08 de Septiembre</p>
                     </div>
                 </div>
             </div>
