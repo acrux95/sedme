@@ -1,21 +1,19 @@
-import React from 'react';
-import '../assets/styles/components/Modal.scss';
+import React from 'react'
+import '../assets/styles/components/Modal.scss'
 
 const Modal = (props) => {
-  const click = () => {
-    modal.style.display = 'block';
-  };
+  console.log(props)
   return (
     <>
-      <button onClick={click}>Open Modal</button>
+      {/* {props.visible ? ( */}
       <div id='myModal' className='modal'>
-        <div className='modal-content'>
-          <span className='close'>&times;</span>
           {props.children}
-        </div>
       </div>
+      {/* ) : ( */}
+      {/* <div>Hola</div> */}
+      {/* )} */}
     </>
-  );
-};
+  )
+}
 
-export default Modal;
+export default Modal

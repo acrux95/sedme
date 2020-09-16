@@ -1,0 +1,155 @@
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@200;300;400&display=swap');
+@import '../Vars.scss';
+
+.loginScreen {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 10vh 15vh 66vh 10vh;
+  background-color: $very-light-color;
+  margin: 0;
+}
+
+.mainLogo {
+  grid-row: 2 / 3;
+  justify-self: center;
+  max-width: 100px;
+}
+
+.mainContainer {
+  grid-row: 3 / 4;
+  align-self: center;
+  justify-self: center;
+  width: 40vw;
+  height: 55vh;
+  background-color: $white-color;
+  border: 1px solid $main-light-color;
+  border-radius: 5%;
+  display: grid;
+  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-areas:
+    '. login login .'
+    '. user . .'
+    '. inputuser inputuser .'
+    '. password . .'
+    '. inputpassword inputpassword .'
+    '. button button .'
+    '. recover recover .';
+  .loginTitle {
+    grid-area: login;
+    margin: 0;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+  }
+  .user {
+    grid-area: user;
+    margin: 0;
+    align-self: center;
+    justify-self: start;
+    font-family: 'Raleway', sans-serif;
+    font-size: $text-font-size;
+  }
+  .userInput {
+    grid-area: inputuser;
+    height: 30px;
+    align-self: center;
+    background-color: $main-light-color;
+    border: none;
+    border-radius: 5px;
+  }
+  .password {
+    grid-area: password;
+    margin: 0;
+    align-self: center;
+    justify-self: start;
+    font-family: 'Raleway', sans-serif;
+    font-size: $text-font-size;
+  }
+  .passwordInput {
+    grid-area: inputpassword;
+    height: 30px;
+    align-self: center;
+    background-color: $main-light-color;
+    border: none;
+    border-radius: 5px;
+  }
+  .enterButton {
+    grid-area: button;
+    height: 35px;
+    align-self: center;
+    background-color: $main-color;
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    color: $white-color;
+    font-size: 15px;
+    font-weight: 700;
+    &:hover {
+      /*  background-color: chartreuse;
+            font-size: 15px;
+            font-weight: 800; */
+    }
+  }
+  .passwordRecover {
+    grid-area: recover;
+    justify-self: start;
+    align-self: center;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    color: $dark-contrast;
+    &:hover {
+      color: $colorAlert;
+      font-weight: 500;
+    }
+  }
+}
+
+//footer
+.footerBar {
+  grid-row: 4 / 5;
+  align-self: flex-end;
+  height: 40px;
+  border-style: solid;
+  border-width: 2.5px 0.7px 0.7px 2.5px;
+  border-color: $dark-contrast;
+  background: $main-color;
+  /* border-radius: 5px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .title {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: $colorFont1;
+  }
+}
+//header
+.navBar {
+  grid-row: 1 / 2;
+  height: 40px;
+  border-style: solid;
+  border-width: 0.7px 1.5px 1.5px 0.7px;
+  border-color: $colorBorder1;
+  background: $colorBackground1;
+  /* border-radius: 5px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: $colorFont1;
+  }
+}
+//media
+@media screen and (max-width: 321px) {
+  .mainContainer {
+    width: 80vw;
+    grid-template-columns: 5% 20% 40% 5%;
+  }
+}

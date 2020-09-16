@@ -1,6 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
 
 const Home = () => {
   const showAlert = () => {
@@ -31,34 +32,42 @@ const Home = () => {
 
   return (
     <>
-      {/* <Alert></Alert> */}
-      <h1>Hola Sedme en React</h1>
+      <Layout>
+        {/* <Alert></Alert> */}
+        <h1>Hola Sedme en React</h1>
 
-      <h2>Rutas:</h2>
-      <ul>
-        <li>
-          <Link to='/admin'>Administracion</Link>
-        </li>
-        <li>
-          <Link to='/login'>Login</Link>
-        </li>
-        <li>
-          <Link to='/calendar'>Calendario</Link>
-        </li>
-        <li>
-          <Link to='/profile'>Perfil</Link>
-        </li>
-      </ul>
+        <h2>Rutas:</h2>
+        <ul>
+          <li>
+            <Link to='/admin'>Administracion</Link>
+          </li>
+          <li>
+            <Link to='/login'>Login</Link>
+          </li>
+          <li>
+            <Link to='/calendar'>Calendario</Link>
+          </li>
+          <li>
+            <Link to='/profile'>Perfil</Link>
+          </li>
+        </ul>
 
-      <em>
-        Para Html que se agrege: <br />
-        Cambiar class="" por className="" <br />
-        Cambiar a href="" por Link to="" <br />
-      </em>
+        <em>
+          Para Html que se agrege: <br />
+          Cambiar class="" por className="" <br />
+          Cambiar a href="" por Link to="" <br />
+        </em>
 
-      <button className="btn" onClick={() => showAlert()}>Msj 1</button>
-      <button className="btn" onClick={() => showAlert2()}>Msj 2</button>
-      <button className="btn" onClick={() => showAlert3()}>Msj 3 </button>
+        <button className='btn' onClick={() => showAlert()}>
+          Msj 1
+        </button>
+        <button className='btn' onClick={() => showAlert2()}>
+          Msj 2
+        </button>
+        <button className='btn' onClick={() => showAlert3()}>
+          Msj 3{' '}
+        </button>
+      </Layout>
     </>
   );
 };
