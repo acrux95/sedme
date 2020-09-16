@@ -1,0 +1,107 @@
+@import '../Vars.scss';
+
+.main {
+    
+    font-family: $font;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: "photo info"
+                        "bio bio";
+    .photoSection {
+        grid-area: photo;
+        display: grid;
+        grid-template-rows: 50px 250px 40px;
+        h3 {
+            grid-row: 1/2;
+            margin: 0;
+            justify-self: center;
+            align-self: center;
+        }
+        img {
+            grid-row: 2/3;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            justify-self: center; 
+            align-self: center;           
+        }
+        .uploadButton {
+            grid-row: 3/4;
+            justify-self: center;
+            align-self: center;
+            height: 45px;
+            width: 150px;
+            border-radius: 10px;
+            background: none;
+            border: 1px solid $main-light-color;
+            color: $text-color;
+        }
+
+    }
+    .personalInfo {
+        grid-area: info;
+        
+        
+        h2 {
+            height: 60px;
+        }
+        label {
+            display: block;
+            height: 40px;
+            display: flex;
+            align-items: center; 
+        }
+        input {
+            height: 40px;
+            width: 100%;
+            border-radius: 10px;
+            background: none;
+            box-sizing: border-box;
+            border: 1px solid $main-light-color;
+            padding: 12px;
+            resize: vertical;
+            
+            }
+        .buttonPass {
+            display: flex;
+            justify-content: flex-end;
+            button {
+                margin-top: 30px;
+                height: 45px;
+                width: 200px;
+                border-radius: 10px;
+                background: $main-color;
+                border: none;
+                color: $background-color;
+            }
+        }
+    }
+    .biography {
+        grid-area: bio;
+        .biographyInput {
+            height: 150px;
+            width: 100%;
+            border-radius: 10px;
+            background: none;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 1px solid $main-light-color;
+            resize: vertical;
+            
+        }
+        .buttonSave {
+            display: flex;
+            justify-content: flex-end;
+            button {
+                margin-top: 30px;
+                height: 45px;
+                width: 200px;
+                border-radius: 10px;
+                background: $main-color;
+                border: none;
+                color: $background-color;
+            }
+        }
+    }
+}
