@@ -1,0 +1,46 @@
+body {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "aside header" "aside main";
+}
+
+.aside {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: aside;
+  height: 100%;
+  position: fixed;
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: header;
+  height: 80px;
+}
+
+.main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: "photo info" "bio bio";
+}
+.main .photoSection {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: photo;
+}
+.main .personalInfo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: info;
+}
+.main .biography {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: bio;
+}
