@@ -9,11 +9,26 @@ $second-color: #e94560;
 $dark-contrast: #272626;
 $text-color: #7a8087;
 $background-color: #f7fafc;
-$h2-font-size: 36px;
-$h3-font-size: 28px;
-$h4-font-size: 24px;
+$background-title-color:#ccd5e0;
 $card-border-radius: 15px;
 $font:Roboto, Arial, Helvetica, sans-serif;
+
+/* Tamaños de fuente */
+$h2-font-size: 36px;
+$h3-font-size:28px;
+$h4-font-size:24px;
+$text-font-size: 15px;
+
+/* Bordes */
+$card-border-radius:15px;
+
+$colorBorder1: #130338;
+$colorFont1: rgb(250, 249, 246);
+$colorBackground1: #272c67;
+$colorBackground2: #e3e8f0;
+$colorBackground3: #ccd5e0;
+$colorAlert: #e94560;
+$size1: 10px;
 
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
