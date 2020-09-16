@@ -8,7 +8,7 @@ const Profile = () => {
         <div className="main">
         <section className="photoSection">
             <h3>Photo</h3>
-            <img src="../assets/static/profilephoto.jpg" alt="Profile Photo" className="perfilPhoto"/>
+            <img src="/src/assets/static/profilephoto.jpg" alt="Profile Photo" className="perfilPhoto"/>
             <button className="uploadButton">Upload Photo</button>
         </section>
         <section className="personalInfo">
