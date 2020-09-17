@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 // import axios from 'axios';
 import '../assets/styles/components/Login.scss';
 import img from '../assets/static/logo-claro-190x190px-web.png';
 
-const Login = () => {
+const Login = (props) => {
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -19,12 +19,16 @@ const Login = () => {
   };
 
   const postUser = () => {
+
     swal.fire({
       title: `${user.password} ${user.email}`,
       icon: 'success',
       timer: 1500,
       showConfirmButton: false,
     });
+    const history = useHistory();
+    history.push('/');
+
     // axios.get(`http://localhost:3000/api/users` )
     //   .then(res => {
     //     const persons = res.data;
@@ -57,13 +61,14 @@ const Login = () => {
             type='text'
             onChange={handleInputChange}
           />
-          <button className='enterButton' onClick={postUser}>
-            Get Started
-          </button>
+          {/* <button type='submit' className='enterButton' onClick={()=>postUser}> */}
+          {/* Get Started
+          </button> */}
+          <Link className='enterButton buttonToLink' to='/'>Get Started</Link>
+
           <Link to='/recover' className='passwordRecover'>
             Recover Password
           </Link>
-          <Link to='/'>Ir a home</Link>
         </div>
         <footer className='footerBar'>
           <p className='title'>Student Goal Setting System for Platzi Master</p>
