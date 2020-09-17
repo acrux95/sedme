@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 const Layout = (props) => (
   <div className='page'>
-    <Aside />
+    {/* <Aside /> */}
     <Header />
     <section className='content'>{props.children}</section>
     <Footer />

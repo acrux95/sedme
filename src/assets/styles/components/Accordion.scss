@@ -1,0 +1,16 @@
+@import '../Vars.scss';
+.row {
+  height: 100%;
+  padding: 16px;
+  width: 100%;
+  border: 1px solid red;
+  border-radius: 8px;
+  margin: 4px;
+  .row__name {
+  }
+  .row__icon {
+    color: $main-color;
+    font-size: 18px;
+    margin-right: 19px;
+  }
+}

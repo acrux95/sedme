@@ -8,12 +8,11 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import Modal from '../Modal'
 
-const Table = () => {
+const Users = () => {
   const [users, setUsers] = useState([])
   const [modal, setModal] = useState(false)
   const [filter, setFilter] = useState('')
   const [form, setForm] = useState({ name: 'Fulano' })
-  
 
   const nuevo = () => {
     setModal(!modal)
@@ -24,7 +23,7 @@ const Table = () => {
   }
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/users`).then((res) => {
+    axios.get(`http://3.128.32.140:3000/api/users/`).then((res) => {
       const users = res.data.data
       setUsers(users)
       console.log(users)
@@ -54,13 +53,12 @@ const Table = () => {
 
   return (
     <>
-      <input className='search' type='text' />
+      <input className='search' type='text' placeholder='Nombre del usuario' />
       <div className='search__icon'>
         <FontAwesomeIcon icon={faSearch} />
       </div>
-      <button className='btn right' onClick={addUser}>
-        <FontAwesomeIcon icon={faPlus} />
-        Añadir Usuario
+      <button className='btn right add-btn' onClick={addUser}>
+        <FontAwesomeIcon icon={faPlus} /> Add user
       </button>
       <br />
       <table>
@@ -122,4 +120,4 @@ const Table = () => {
   )
 }
 
-export default Table
+export default Users

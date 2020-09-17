@@ -6,7 +6,8 @@
     height: 50px;
     font-size: 20px;
     width: 100%;
-    border-radius: 24px 24px 0 0;
+    outline: none;
+    border-radius: 16px 16px 0 0;
     color: $text-color;
     &.active {
       background-color: $main-color;
@@ -21,10 +22,16 @@
     }
   }
   &__content {
-    display: relative;
+    position: relative;
     background: $white-color;
-    padding: 8px;
+    border: 2px solid $main-color;
+    border-radius: 0 0 16px 16px;
+    padding: 18px;
   }
+}
+
+.add-btn {
+  width: 150px;
 }
 
 .search {
@@ -43,8 +50,8 @@
   }
   &__icon {
     position: absolute;
-    left: 255px;
-    top: 220px;
+    top: 42px;
+    right: 35px;
     font-size: 28px;
   }
 }
