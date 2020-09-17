@@ -1,0 +1,10 @@
+@import '../Vars.scss';
+.page {
+  display: grid;
+  grid-template-rows: 80px 9fr;
+  grid-template-columns: 2fr 8fr;
+  grid-template-areas: "menu header" "menu content";
+}
+.content{
+  grid-area: content;
+}
