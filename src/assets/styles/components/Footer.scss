@@ -1,3 +1,4 @@
+@import '../Vars.scss';
 footer {
     grid-area: footer;
     display: flex;
@@ -9,6 +10,6 @@ footer {
     background-color: $main-color;
     color: $white-color;
     font-size: 24px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
