@@ -1,0 +1,49 @@
+@import '../../Vars.scss';
+
+.day {
+  width: 100%;
+  height: 120px;
+  padding: 8px;
+  border: $main-light-color 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  &__dot {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: $main-color;
+  }
+  &__number {
+    font-size: 14px;
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    color: white;
+    font-weight: bold;
+  }
+}
+
+.activity {
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+
+  &__dot {
+    height: 15px;
+    width: 15px;
+    background-color: cyan;
+    border-radius: 50%;
+  }
+  &__hour {
+    font-weight: bold;
+  }
+  &__description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
