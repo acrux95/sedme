@@ -7,7 +7,7 @@ import NotFound from '../pages/NotFound'
 import Admin from '../pages/Admin'
 import LearningPath from '../pages/LearningPath'
 import Calendar from '../pages/Calendar'
-import Profile from '../containers/Profile'
+import Profile from '../pages/Profile'
 
 import '../assets/styles/App.scss'
 
