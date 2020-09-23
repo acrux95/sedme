@@ -11,7 +11,7 @@
     .photoSection {
         grid-area: photo;
         display: grid;
-        grid-template-rows: 50px 250px 40px;
+        grid-template-rows: 30px 250px 40px;
         h3 {
             grid-row: 1/2;
             margin: 0;
@@ -24,7 +24,8 @@
             height: 200px;
             border-radius: 50%;
             justify-self: center; 
-            align-self: center;           
+            align-self: center;    
+             
         }
         .uploadButton {
             grid-row: 3/4;
@@ -44,7 +45,8 @@
         
         
         h2 {
-            height: 60px;
+            height: 20px;
+            margin-top: 0;
         }
         label {
             display: block;
@@ -67,7 +69,7 @@
             display: flex;
             justify-content: flex-end;
             button {
-                margin-top: 30px;
+                margin-top: 25px;
                 height: 45px;
                 width: 200px;
                 border-radius: 10px;
@@ -80,7 +82,7 @@
     .biography {
         grid-area: bio;
         .biographyInput {
-            height: 150px;
+            height: 130px;
             width: 100%;
             border-radius: 10px;
             background: none;
@@ -94,7 +96,7 @@
             display: flex;
             justify-content: flex-end;
             button {
-                margin-top: 30px;
+                margin-top: 20px;
                 height: 45px;
                 width: 200px;
                 border-radius: 10px;

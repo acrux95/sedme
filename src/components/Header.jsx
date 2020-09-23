@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import '../assets/styles/components/Header.scss'
 import profile from '../assets/static/user-icon.png'
 
+
 const Header = () => (
   <header className='header'>
     <div className='username'>
@@ -14,11 +15,13 @@ const Header = () => (
     </div>
     <div className='container-avatar'>
       <div className='avatar'>
-        <img
-          src={profile}
-          alt='Usuario'
-          className='usuario-avatar'
-        />
+        <Link className="profileLink" to="/profile">
+          <img
+            src={profile}
+            alt='Usuario'
+            className='usuario-avatar'
+          />
+        </Link>
       </div>
     </div>
   </header>

@@ -2,6 +2,8 @@ import React from 'react';
 import swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import '../assets/styles/components/Profile.scss';
+import Layout from '../components/Layout';
+import profilePhoto from '../assets/static/profilephoto.png';
 
 const Profile = () => {
   return (
@@ -10,7 +12,7 @@ const Profile = () => {
             <div className="main">
                 <section className="photoSection">
                     <h3>Photo</h3>
-                    <img src="/src/assets/static/profilephoto.jpg" alt="Profile Photo" className="perfilPhoto"/>
+                    <img src={profilePhoto} alt="Profile Photo" className="perfilPhoto"/>
                     <button className="uploadButton">Upload Photo</button>
                 </section>
                 <section className="personalInfo">
@@ -27,7 +29,7 @@ const Profile = () => {
                 </section>
                 <div className="section biography">
                     <h3>Biography</h3>
-                    <textarea type="text" className="biographyInput" placeholder="Actual estudiante de Platzi Master..."></textarea>
+                    <textarea type="text" className="biographyInput" placeholder="Platzi Master Actually Student..."></textarea>
                     <div className="buttonSave">
                         <button className="saveChanges">Save</button>
                     </div>
