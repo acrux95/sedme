@@ -6,6 +6,7 @@ import Login from '../containers/Login'
 import NotFound from '../containers/NotFound'
 import Admin from '../containers/Admin'
 import LearningPath from '../containers/LearningPath'
+import Profile from '../containers/Profile'
 
 import '../assets/styles/App.scss'
 
@@ -16,6 +17,7 @@ const App = () => (
       <Route exact path='/admin' component={Admin} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/learning' component={LearningPath} />
+      <Route exact path='/Profile' component={Profile} />
       {/* <Route exact path='/register' component={Register} /> */}
       <Route component={NotFound} />
     </Switch>
