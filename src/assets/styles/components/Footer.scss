@@ -1,15 +1,15 @@
 @import '../Vars.scss';
 footer {
-    grid-area: footer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    width: 100%;
-    height: 50px;
-    background-color: $main-color;
-    color: $white-color;
-    font-size: 24px;
-    position: absolute;
-    bottom: 0;
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  height: 50px;
+  background-color: $main-color;
+  color: $white-color;
+  font-size: 24px;
+  position: fixed;
+  bottom: 0;
 }

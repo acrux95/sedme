@@ -20,7 +20,6 @@ const Login = (props) => {
   };
 
   const postUser = () => {
-
     swal.fire({
       title: `${user.password} ${user.email}`,
       icon: 'success',
@@ -46,26 +45,34 @@ const Login = (props) => {
         <img className='mainLogo' src={img} alt='' />
         <div className='mainContainer'>
           <p className='loginTitle'>Login</p>
-          <p className='user'>Email</p>
-          <input
-            className='userInput'
-            name='email'
-            type='text'
-            onChange={handleInputChange}
-          />
-          <p className='password' onChange={() => setUser()}>
-            Password
-          </p>
-          <input
-            className='passwordInput'
-            name='password'
-            type='text'
-            onChange={handleInputChange}
-          />
+          <div className='userWraper'>
+            <p className='user'>Email</p>
+            <input
+              className='userInput'
+              name='email'
+              type='text'
+              placeholder='Email'
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className='passwordWraper'>
+            <p className='password' onChange={() => setUser()}>
+              Password
+            </p>
+            <input
+              className='passwordInput'
+              name='password'
+              type='text'
+              onChange={handleInputChange}
+              placeholder='Password'
+            />
+          </div>
           {/* <button type='submit' className='enterButton' onClick={()=>postUser}> */}
           {/* Get Started
           </button> */}
-          <Link className='enterButton buttonToLink' to='/'>Get Started</Link>
+          <Link className='enterButton buttonToLink' to='/'>
+            Get Started
+          </Link>
 
           <Link to='/recover' className='passwordRecover'>
             Recover Password
