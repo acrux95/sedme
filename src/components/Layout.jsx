@@ -12,7 +12,7 @@ const Layout = (props) => (
     <Aside />
     <Header />
     <section className='content'>{props.children}</section>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 )
 

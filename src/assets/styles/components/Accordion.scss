@@ -3,14 +3,24 @@
   height: 100%;
   padding: 16px;
   width: 100%;
-  border: 1px solid red;
+  font-weight: bold;
+  font-size: large;
+  color: $very-light-color;
+  background-color: $main-color;
   border-radius: 8px;
-  margin: 4px;
-  .row__name {
+  &:hover {
+    cursor: pointer;
+    background-color:$main-color-light;
   }
+
   .row__icon {
-    color: $main-color;
+    color: $very-light-color;
     font-size: 18px;
     margin-right: 19px;
   }
+}
+.row__content {
+  border-radius: 8px;
+  padding: 4px 4px 4px 4px;
+  background-color: $main-light-color;
 }
