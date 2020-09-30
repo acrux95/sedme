@@ -22,7 +22,7 @@
   align-self: center;
   justify-self: center;
   width: 40vw;
-  height: 55vh;
+  height: 45vh;
   background-color: $white-color;
   border: 1px solid $main-light-color;
   border-radius: 5%;
@@ -30,9 +30,7 @@
   grid-template-columns: 10% 40% 40% 10%;
   grid-template-areas:
     '. login login .'
-    '. user . .'
     '. inputuser inputuser .'
-    '. password . .'
     '. inputpassword inputpassword .'
     '. button button .'
     '. recover recover .';
@@ -44,6 +42,9 @@
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
     font-size: 25px;
+  }
+  .userWraper {
+    grid-area: inputuser;
   }
   .user {
     grid-area: user;
@@ -60,6 +61,9 @@
     background-color: $main-light-color;
     border: none;
     border-radius: 5px;
+  }
+  .passwordWraper {
+    grid-area: inputpassword;
   }
   .password {
     grid-area: password;
@@ -94,12 +98,11 @@
     }
   }
 
-  .buttonToLink{
+  .buttonToLink {
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    
   }
 
   .passwordRecover {
