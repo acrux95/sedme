@@ -3,6 +3,7 @@ import swal from 'sweetalert2';
 import { Link, useHistory } from 'react-router-dom';
 // import axios from 'axios';
 import '../assets/styles/components/Login.scss';
+
 import img from '../assets/static/logo-claro-190x190px-web.png';
 
 const Login = (props) => {

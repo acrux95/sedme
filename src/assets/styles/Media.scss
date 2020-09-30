@@ -1,10 +1,52 @@
-@media only screen and (max-width: 600px) {
-  .main__description--title {
-    font-size: 30px;
-  }
+@import '/Vars.css';
 
-  .footer {
-    align-items: flex-start;
-    flex-direction: column;
+/* @media only screen and (max-width: 1460px) {
+
+}
+@media only screen and (max-width: 1024px) {
+
+}*/
+@media only screen and (max-width: 768px) {
+.mainLogo {
+      width: 80px;
+    }
+    .mainContainer {
+      width: 50vw;
+      height: 60vh;
+      .passwordRecover {
+        font-size: 13px;
+      }
   }
 }
+@media only screen and (max-width: 528px) {
+.mainLogo {
+      width: 80px;
+    }
+    .mainContainer {
+      width: 60vw;
+      height: 60vh;
+      .passwordRecover {
+        font-size: 13px;
+      }
+  }
+}
+@media only screen and (max-width: 375px) {
+    .mainLogo {
+      width: 80px;
+    }
+    .mainContainer {
+      width: 80vw;
+      height: 60vh;
+      .passwordRecover {
+        font-size: 12px;
+      }
+  }
+  .footerBar{
+    .title {
+      font-size: 17px;
+    }
+  }
+}
+/* @media only screen and (max-width: 320px) {
+
+}  */

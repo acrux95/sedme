@@ -1,0 +1,15 @@
+@media only screen and (max-width: 600px) {
+  .main__description--title {
+    font-size: 30px;
+  }
+  .footer {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+/*# sourceMappingURL=Media.css.map */

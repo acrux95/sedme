@@ -11,7 +11,9 @@ const Layout = (props) => (
   <div className='page'>
     <Aside />
     <Header />
-    <section className='content'>{props.children}</section>
+      <section className='content'>
+        {props.children}
+      </section>
     <Footer />
   </div>
 )
