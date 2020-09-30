@@ -13,10 +13,10 @@ Para ejeccutar el proyecto en modo desarrollo
 ## Acerca de
 Proyecto front-end desarrollado con:
 * SASS
-* PUG
 * HTML
 * JAVASCRIPT
 * WEBPACK 4
+* REACT
 
 By:
 ![Image](./src/assets/static/DarkCodeLogo.png)

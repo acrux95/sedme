@@ -3,6 +3,8 @@ import swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 
+import '../assets/styles/components/Home.scss';
+
 const Home = () => {
   const showAlert = () => {
     swal.fire('Hola mundo', 'body');
@@ -34,39 +36,37 @@ const Home = () => {
     <>
       <Layout>
         {/* <Alert></Alert> */}
-        <h1>Hola Sedme en React</h1>
-
-        <h2>Rutas:</h2>
-        <ul>
-          <li>
-            <Link to='/admin'>Administracion</Link>
-          </li>
-          <li>
-            <Link to='/login'>Login</Link>
-          </li>
-          <li>
-            <Link to='/calendar'>Calendario</Link>
-          </li>
-          <li>
-            <Link to='/profile'>Perfil</Link>
-          </li>
-        </ul>
-
-        <em>
-          Para Html que se agrege: <br />
-          Cambiar class="" por className="" <br />
-          Cambiar a href="" por Link to="" <br />
-        </em>
-
-        <button className='btn' onClick={() => showAlert()}>
-          Msj 1
-        </button>
-        <button className='btn' onClick={() => showAlert2()}>
-          Msj 2
-        </button>
-        <button className='btn' onClick={() => showAlert3()}>
-          Msj 3{' '}
-        </button>
+        <h1 className='PageTitle'>Hola otra vez Leomaris!</h1>
+        <div className='inisigthContainer'>
+          <div className='insigth'>
+            <h3>Completados</h3>
+            <p className='insithMain'>23 Cursos</p>
+            <div className=' progress'>
+              <div className='progressCompleted progressCompletados'></div>
+            </div>
+          </div>
+          <div className='insigth'>
+            <h3>Pendientes</h3>
+            <p className='insithMain'>20 Cursos</p>
+            <div className=' progress'>
+              <div className='progressCompleted '></div>
+            </div>
+          </div>
+          <div className='insigth'>
+            <h3>Progreso Total</h3>
+            <p className='insithMain'>54%</p>
+            <div className='progress'>
+              <div className='progressCompleted'></div>
+            </div>
+          </div>
+          <div className='insigth'>
+            <h3>Semanas pendientes</h3>
+            <p className='insithMain'>5</p>
+            <div className=' progress'>
+              <div className='progressCompleted progressSemanas'></div>
+            </div>
+          </div>
+        </div>
       </Layout>
     </>
   );
