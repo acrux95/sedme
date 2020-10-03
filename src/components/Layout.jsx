@@ -1,15 +1,19 @@
+// Dependencies
 import React from 'react';
+// Components
 import Header from './Header';
 import Aside from './Aside';
+import Footer from './Footer';
+//Assets
+import '../assets/styles/components/Layout.scss';
 
-const Footer = (props) => (
+const Layout = (props) => (
   <div className='page'>
-    <Aside></Aside>
-    <section className='page__box'>
-      <Header></Header>
-      <div className='page__content'>{props.children}</div>
-    </section>
+    <Aside />
+    <Header />
+    <section className='content'>{props.children}</section>
+    {/* <Footer /> */}
   </div>
-);
+)
 
-export default Footer;
+export default Layout

@@ -1,38 +1,41 @@
 @import '../Vars.scss';
 aside {
-    grid-area: menu;
-    color: $white-color;
-    background-color: $main-color;
-    width: 20%;
-    height: 100%;
-    font-size: 1.2rem;
-    position: fixed;
-    h1 {
+  grid-area: menu;
+  color: $white-color;
+  background-color: $main-color;
+  width: 20%;
+  height: 100%;
+  font-size: 1.2rem;
+  position: fixed;
+  h1 {
+    text-align: center;
+    padding-top: 25px;
+    letter-spacing: 10px;
+    font-size: 2rem;
+  }
+  ul {
+    padding: 50px 20px 0 20px;
+  }
+  ul li {
+    list-style: none;
+    padding: 10px;
+    border-spacing: 50px;
+    a {
+      text-decoration: none;
+      width: 100%;
+      color: $white-color;
+      display: flex;
+      align-items: center;
+      margin: auto;
+      i {
+        width: 20%;
+        font-size: 1.4rem;
         text-align: center;
-        padding-top: 25px;
-        letter-spacing: 10px;
-        font-size: 2rem;
+        padding-right: 15px;
+      }
+      p{
+        margin-left: 15px;
+      }
     }
-    ul {
-        padding: 50px 20px 0 20px;
-    }
-    ul li {
-        list-style: none;
-        padding: 10px;
-        border-spacing: 50PX;
-        a {
-            text-decoration: none;
-            width: 100%;
-            color: $white-color;
-            display: flex;
-            align-items: center;
-            margin: auto;
-            i {
-                width: 20%;
-                font-size: 1.4rem;
-                text-align: center;
-                padding-right: 15px;
-            }
-        }
-    }
+  }
 }

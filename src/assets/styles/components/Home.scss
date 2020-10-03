@@ -1,0 +1,47 @@
+@import '../Vars.scss';
+
+.PageTitle {
+  text-align: center;
+}
+.inisigthContainer {
+  width: 90%;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.insigth {
+  background-color: rgba($color: #353434, $alpha: 0.1);
+  border: 1px solid grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding: 30px;
+  h3 {
+    font-size: 25px;
+  }
+  .progress {
+    width: 90%;
+    height: 50px;
+  }
+  .progressCompleted {
+    background-color: #272c67;
+    width: 55%;
+    height: 100%;
+  }
+  .insithMain {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .progressCompletados {
+    width: 55%;
+  }
+  .progressPendientes {
+    width: 50%;
+  }
+  .progressSemanas {
+    width: 75%;
+  }
+}

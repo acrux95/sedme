@@ -10,6 +10,9 @@ header {
     color: $white-color;
     align-items: center;
     text-align: right;
+    position: sticky;
+    top: 0;
+    z-index: 9;
     div {
         padding-right: 30px;
         color: $text-color;
@@ -30,7 +33,7 @@ header {
             margin: auto;
         }
         .usuario-avatar{
-            width: 100%;
+            height: 100%;
         }
     }
 }

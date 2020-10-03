@@ -1,25 +1,27 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from '../containers/Home';
-import Login from '../containers/Login';
-// import Register from '../containers/Register';
-import NotFound from '../containers/NotFound';
-import Admin from '../containers/Admin';
-import Layout from '../components/Layout';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import '../assets/styles/App.scss';
+import Home from '../pages/Home'
+import Login from '../pages/Login'
+import NotFound from '../pages/NotFound'
+import Admin from '../pages/Admin'
+import LearningPath from '../pages/LearningPath'
+import Calendar from '../pages/Calendar'
+import Profile from '../pages/Profile'
+
+import '../assets/styles/App.scss'
 
 const App = () => (
   <BrowserRouter>
-    <Layout>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/admin' component={Admin} />
-        <Route exact path='/login' component={Login} />
-        {/* <Route exact path='/register' component={Register} /> */}
-        <Route component={NotFound} />
-      </Switch>
-    </Layout>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route exact path='/admin' component={Admin} />
+      <Route exact path='/login' component={Login} />
+      <Route exact path='/learning' component={LearningPath} />
+      <Route exact path='/calendar' component={Calendar} />
+      <Route exact path='/profile' component={Profile} />
+      <Route component={NotFound} />
+    </Switch>
   </BrowserRouter>
-);
-export default App;
+)
+export default App
