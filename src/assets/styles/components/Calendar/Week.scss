@@ -1,0 +1,154 @@
+// Variables
+$white-color: #fff;
+$main-color: #272c67;
+$very-light-color: #e2e8f0;
+$main-color-light: #353c8a;
+$second-color: #e94560;
+$dark-contrast: #272626;
+$text-color: #7a8087;
+$background-color: #f7fafc;
+$h2-font-size: 36px;
+$h3-font-size:28px;
+$h4-font-size:24px;
+/* Nuevo */
+$background-title-color:#ccd5e0;
+
+/* Calendario semanal */
+.content {
+    grid-area: content;
+    .title-container{
+        margin-top: 10px;
+        padding: 15px 15px 15px 40px;
+        background-color: $background-title-color;
+        color: $text-color;
+        display: flex;
+        position: relative;
+        .pagination{
+            display: flex;
+            justify-content: flex-start;
+            a {
+                text-decoration: none;
+                color: $text-color;
+            }
+            .back {
+                margin: 0 5px;
+                padding: 1px;
+                border: 2px solid $background-title-color;
+            }
+            .next {
+                margin: 0 5px;
+                padding: 1px;
+                border: 1px solid $background-title-color;
+            }
+            i {
+                font-size: 1.5rem;
+            }
+        }
+        .month-year {
+            margin-left: 50px;
+        }
+        .search-button {
+            color: $text-color;
+            right: 0;
+            position: absolute;
+            margin-right: 80px;
+            display: flex;
+            i {
+                font-size: 1.5rem;
+                color: $text-color;
+            }
+            .drop-menu {
+                margin-left: 50px;
+            }
+        }
+    }
+
+    /* TABLA */
+    table {
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        border-spacing: 0;
+        border-radius: 15px;
+        color: $text-color;
+        thead, tr, th {
+            border: 1px solid $background-title-color;
+            margin: 0;
+        }
+        thead {
+            background-color: $very-light-color;
+            tr {
+                th:nth-child(1){
+                    border: none;
+                    background-color: $white-color;
+                }
+                th:nth-child(2) {
+                    border-radius: 10px 0 0 0;
+                }
+                th:nth-last-child(1) {
+                    border-radius: 0 10px 0 0;
+                }
+                th #day-of-week {
+                    background-color: $main-color-light;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    margin: auto;
+                }
+            }
+        }
+        tbody, tr, td {
+            border: 1px solid $background-title-color;
+            margin: 0;
+            padding-bottom: 30px;
+            width: 90px;
+        }
+        tbody {
+            tr {
+                td:nth-child(1) {
+                    text-align: right;
+                    border: none;
+                }
+                #course-box {
+                    background-color: yellow;
+                }
+                #meeting-group-box {
+                    background-color: #40bcff;
+                }
+                #meeting-1-1-box {
+                    background-color: #75ff8c;
+                }
+            }
+            tr:nth-last-child(1) {
+                td:nth-child(2) {
+                    border-radius: 0 0 0 10px;
+                }
+                td:nth-last-child(1) {
+                    border-radius: 0 0 10px 0;
+                }
+            }
+        }
+    }
+    .add-activity {
+        display: flex;
+        justify-content: flex-end;        
+        margin: 50px;
+        a {
+            padding: 10px;
+            display: flex;
+            border-radius: 10px;
+            color: $white-color;
+            background-color: $main-color;
+            text-decoration: none;
+            h1 {
+                margin-left: 10px;
+            }
+            i {
+                font-size: 1.5rem;
+            }
+        }
+        a:hover {
+            background-color: $main-color-light;
+        }
+    }
+}
