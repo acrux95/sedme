@@ -1,0 +1,131 @@
+/* Nuevo */
+/* Calendario semanal */
+.content {
+  grid-area: content;
+  /* TABLA */
+}
+.content .title-container {
+  margin-top: 10px;
+  padding: 15px 15px 15px 40px;
+  background-color: #ccd5e0;
+  color: #7a8087;
+  display: flex;
+  position: relative;
+}
+.content .title-container .pagination {
+  display: flex;
+  justify-content: flex-start;
+}
+.content .title-container .pagination a {
+  text-decoration: none;
+  color: #7a8087;
+}
+.content .title-container .pagination .back {
+  margin: 0 5px;
+  padding: 1px;
+  border: 2px solid #ccd5e0;
+}
+.content .title-container .pagination .next {
+  margin: 0 5px;
+  padding: 1px;
+  border: 1px solid #ccd5e0;
+}
+.content .title-container .pagination i {
+  font-size: 1.5rem;
+}
+.content .title-container .month-year {
+  margin-left: 50px;
+}
+.content .title-container .search-button {
+  color: #7a8087;
+  right: 0;
+  position: absolute;
+  margin-right: 80px;
+  display: flex;
+}
+.content .title-container .search-button i {
+  font-size: 1.5rem;
+  color: #7a8087;
+}
+.content .title-container .search-button .drop-menu {
+  margin-left: 50px;
+}
+.content table {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  border-spacing: 0;
+  border-radius: 15px;
+  color: #7a8087;
+}
+.content table thead, .content table tr, .content table th {
+  border: 1px solid #ccd5e0;
+  margin: 0;
+}
+.content table thead {
+  background-color: #e2e8f0;
+}
+.content table thead tr th:nth-child(1) {
+  border: none;
+  background-color: #fff;
+}
+.content table thead tr th:nth-child(2) {
+  border-radius: 10px 0 0 0;
+}
+.content table thead tr th:nth-last-child(1) {
+  border-radius: 0 10px 0 0;
+}
+.content table thead tr th #day-of-week {
+  background-color: #353c8a;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: auto;
+}
+.content table tbody, .content table tr, .content table td {
+  border: 1px solid #ccd5e0;
+  margin: 0;
+  padding-bottom: 30px;
+  width: 90px;
+}
+.content table tbody tr td:nth-child(1) {
+  text-align: right;
+  border: none;
+}
+.content table tbody tr #course-box {
+  background-color: yellow;
+}
+.content table tbody tr #meeting-group-box {
+  background-color: #40bcff;
+}
+.content table tbody tr #meeting-1-1-box {
+  background-color: #75ff8c;
+}
+.content table tbody tr:nth-last-child(1) td:nth-child(2) {
+  border-radius: 0 0 0 10px;
+}
+.content table tbody tr:nth-last-child(1) td:nth-last-child(1) {
+  border-radius: 0 0 10px 0;
+}
+.content .add-activity {
+  display: flex;
+  justify-content: flex-end;
+  margin: 50px;
+}
+.content .add-activity a {
+  padding: 10px;
+  display: flex;
+  border-radius: 10px;
+  color: #fff;
+  background-color: #272c67;
+  text-decoration: none;
+}
+.content .add-activity a h1 {
+  margin-left: 10px;
+}
+.content .add-activity a i {
+  font-size: 1.5rem;
+}
+.content .add-activity a:hover {
+  background-color: #353c8a;
+}
