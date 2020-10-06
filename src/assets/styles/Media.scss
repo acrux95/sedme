@@ -1,10 +1,74 @@
-@media only screen and (max-width: 600px) {
-  .main__description--title {
-    font-size: 30px;
-  }
+@import '/Vars.css';
 
-  .footer {
-    align-items: flex-start;
-    flex-direction: column;
+@media only screen and (max-width: 1441px) {
+.mainLogo {
+      width: 100px;
+    }
+    .mainContainer {
+      width: 35vw;
+      height: 60vh;
+      .passwordRecover {
+        font-size: 15px;
+      }
   }
 }
+
+/* @media only screen and (max-width: 1024px) {
+
+}*/
+@media only screen and (max-width: 769px) {
+.mainLogo {
+      width: 80px;
+    }
+    .mainContainer {
+      width: 50vw;
+      height: 60vh;
+      .passwordRecover {
+        font-size: 13px;
+      }
+  }
+}
+@media only screen and (max-width: 530px) {
+.mainLogo {
+      width: 70px;
+    }
+    .mainContainer {
+      width: 70vw;
+      height: 60vh;
+      .passwordRecover {
+        font-size: 13px;
+      }
+  }
+}
+@media only screen and (max-width: 465px) {
+.mainLogo {
+      width: 70px;
+    }
+    .mainContainer {
+      width: 70vw;
+      height: 60vh;
+      .passwordRecover {
+        font-size: 13px;
+      }
+  }
+}
+@media only screen and (max-width: 375px) {
+    .mainLogo {
+      width: 80px;
+    }
+    .mainContainer {
+      width: 80vw;
+      height: 60vh;
+      .passwordRecover {
+        font-size: 12px;
+      }
+  }
+  .footerBar{
+    .title {
+      font-size: 17px;
+    }
+  }
+}
+/* @media only screen and (max-width: 320px) {
+
+}  */
