@@ -1,39 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import swal from 'sweetalert2';
+import { GlobalContext } from '../reducers';
 import { Link, useHistory } from 'react-router-dom';
 // import axios from 'axios';
 import '../assets/styles/components/Login.scss';
 import img from '../assets/static/logo-claro-190x190px-web.png';
 
 const Login = (props) => {
-  const [user, setUser] = useState({
+  const [{ loggedUser, user }, dispatch] = useContext(GlobalContext);
+
+  const LOGIN_REQUEST = useCallback(
+    (data) => {
+      dispatch({ type: 'LOGIN_REQUEST', payload: data });
+    },
+    [dispatch]
+  );
+
+  // const [user, setUser] = useState({
+  //   email: '',
+  //   password: '',
+  // });
+
+  // const handleInputChange = (event) => {
+  //   setUser({
+  //     ...user,
+  //     [event.target.name]: event.target.value,
+  //   });
+  // };
+
+  const [form, setValues] = useState({
     email: '',
-    password: '',
   });
 
-  const handleInputChange = (event) => {
-    setUser({
-      ...user,
-      [event.target.name]: event.target.value,
+  const handleInput = (e) => {
+    setValues({
+      ...form,
+      [e.target.name]: e.target.value,
     });
   };
 
-  const postUser = () => {
-    swal.fire({
-      title: `${user.password} ${user.email}`,
-      icon: 'success',
-      timer: 1500,
-      showConfirmButton: false,
-    });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    LOGIN_REQUEST(form);
     const history = useHistory();
-    history.push('/');
-
-    // axios.get(`http://localhost:3000/api/users` )
-    //   .then(res => {
-    //     const persons = res.data;
-    //     this.setState({ persons });
-    //   })
+    history.replace('/home');
   };
+
+  // const postUser = () => {
+  //   swal.fire({
+  //     title: `${user.password} ${user.email}`,
+  //     icon: 'success',
+  //     timer: 1500,
+  //     showConfirmButton: false,
+  //   });
+  //   const history = useHistory();
+  //   history.push('/');
+
+  // axios.get(`http://localhost:3000/api/users` )
+  //   .then(res => {
+  //     const persons = res.data;
+  //     this.setState({ persons });
+  //   })
+  // };
 
   return (
     <>
@@ -43,35 +71,37 @@ const Login = (props) => {
         </header>
         <img className='mainLogo' src={img} alt='' />
         <div className='mainContainer'>
-          <p className='loginTitle'>Login</p>
-          <div className='userWraper'>
-            <p className='user'>Email</p>
-            <input
-              className='userInput'
-              name='email'
-              type='text'
-              placeholder='Email'
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className='passwordWraper'>
-            <p className='password' onChange={() => setUser()}>
-              Password
-            </p>
-            <input
-              className='passwordInput'
-              name='password'
-              type='text'
-              onChange={handleInputChange}
-              placeholder='Password'
-            />
-          </div>
-          {/* <button type='submit' className='enterButton' onClick={()=>postUser}> */}
-          {/* Get Started
-          </button> */}
-          <Link className='enterButton buttonToLink' to='/'>
-            Get Started
-          </Link>
+          <form onSubmit={handleSubmit}>
+            <p className='loginTitle'>Login</p>
+            <div className='userWraper'>
+              <p className='user'>Email</p>
+              <input
+                className='userInput'
+                name='email'
+                type='text'
+                placeholder='Email'
+                onChange={handleInput}
+              />
+            </div>
+            <div className='passwordWraper'>
+              <p className='password' onChange={() => setUser()}>
+                Password
+              </p>
+              <input
+                className='passwordInput'
+                name='password'
+                type='password'
+                onChange={handleInput}
+                placeholder='Password'
+              />
+            </div>
+            <button type='submit' className='enterButton'>
+              Get Started
+            </button>
+            {/* <Link className='enterButton buttonToLink' to='/'>
+              Get Started
+            </Link> */}
+          </form>
 
           <Link to='/recover' className='passwordRecover'>
             Recover Password
