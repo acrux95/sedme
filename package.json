@@ -28,10 +28,10 @@
     "react-router-dom": "^5.2.0",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^9.17.2",
-    "sweetalert2-react-content": "^3.1.0"
+    "sweetalert2-react-content": "^3.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.4",
+    "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",

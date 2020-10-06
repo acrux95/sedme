@@ -11,6 +11,7 @@ import Profile from '../pages/Profile'
 
 import '../assets/styles/App.scss'
 
+
 const App = () => (
   <BrowserRouter>
     <Switch>
@@ -20,6 +21,7 @@ const App = () => (
       <Route exact path='/learning' component={LearningPath} />
       <Route exact path='/calendar' component={Calendar} />
       <Route exact path='/profile' component={Profile} />
+      {/* <Route exact path='/register' component={Register} /> */}
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>

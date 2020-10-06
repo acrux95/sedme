@@ -1,0 +1,91 @@
+
+.mainContainer{
+    grid-row: 3 / 4;
+    align-self: center;
+    justify-self: center; 
+    width: 40vw;
+    height: 55vh;
+    background-color: $white-color;
+    border: 1px solid $main-light-color;
+    border-radius: 5%;
+    display: grid;
+    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-areas: ". login login ."
+                        ". user . ."
+                        ". inputuser inputuser ."
+                        ". password . ."
+                        ". inputpassword inputpassword ."
+                        ". button button ."
+                        ". recover recover .";
+    .loginTitle {
+        grid-area: login;
+        margin: 0;
+        align-self: center;
+        justify-self: center;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        font-size: 25px;
+    }
+    .user {
+        grid-area: user;
+        margin: 0;
+        align-self: center;
+        justify-self: start;
+        font-family: 'Raleway', sans-serif;
+        font-size: $text-font-size;
+    }
+    .userInput {
+        grid-area: inputuser;
+        height: 30px;
+        align-self: center;
+        background-color: $main-light-color;
+        border: none;
+        border-radius: 5px;
+    }
+    .password {
+        grid-area: password;
+        margin: 0;
+        align-self: center;
+        justify-self: start;
+        font-family: 'Raleway', sans-serif;
+        font-size: $text-font-size;
+    }
+    .passwordInput {
+        grid-area: inputpassword;
+        height: 30px;
+        align-self: center;
+        background-color: $main-light-color;
+        border: none;
+        border-radius: 5px;
+    }
+    .enterButton {
+        grid-area: button;
+        height: 35px;
+        align-self: center;
+        background-color: $main-color;
+        border-radius: 5px;
+        font-family: 'Raleway', sans-serif;
+        color: $white-color;
+        font-size: 15px;
+        font-weight: 700;
+        &:hover {
+           /*  background-color: chartreuse;
+            font-size: 15px;
+            font-weight: 800; */
+        }
+    }
+    .passwordRecover {
+        grid-area: recover;
+        justify-self: start;
+        align-self: center;
+        text-decoration: none;
+        font-family: 'Raleway', sans-serif;
+        font-size: 10px;
+        color: $obscuro-contraste;
+        &:hover {
+            color: $colorAlert;
+            font-weight: 500;
+        }
+    }
+
+}

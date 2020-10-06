@@ -1,0 +1,35 @@
+body {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "aside header"
+                            "aside main";
+}
+.aside {
+    grid-area: aside;
+    height: 100%;
+    position: fixed;
+}
+.header{
+    grid-area: header;
+    height: 80px;
+    
+    
+}
+.main {
+    grid-area: main;
+    display: grid;
+    // width: 80%;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: "photo info"
+                        "bio bio";
+    .photoSection {
+        grid-area: photo;
+
+    }
+    .personalInfo {
+        grid-area: info;
+    }
+    .biography {
+        grid-area: bio;
+    }
+}

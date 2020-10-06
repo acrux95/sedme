@@ -1,0 +1,32 @@
+body {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-areas: "aside header" "aside main";
+}
+
+.aside {
+  grid-area: aside;
+  height: 100%;
+  position: fixed;
+}
+
+.header {
+  grid-area: header;
+  height: 80px;
+}
+
+.main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: "photo info" "bio bio";
+}
+.main .photoSection {
+  grid-area: photo;
+}
+.main .personalInfo {
+  grid-area: info;
+}
+.main .biography {
+  grid-area: bio;
+}

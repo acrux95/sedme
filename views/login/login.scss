@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@200;300;400&display=swap');
+
+
+@import "../../components/login/css/variables";
+@import "../../components/login/css/login_main";
+@import "../../components/login/css/login_header";
+@import "../../components/login/css/login_footer";
+
+
+
+
+.loginScreen {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 10vh 15vh 66vh 10vh;
+    background-color: $very-light-color;
+    margin: 0;
+}
+
+.mainLogo {
+    grid-row: 2 / 3;
+    justify-self: center;
+    max-width: 100px;
+}
