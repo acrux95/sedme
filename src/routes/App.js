@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import Login from '../pages/Login'
 import NotFound from '../pages/NotFound'
 import Admin from '../pages/Admin'
+import Goals from '../pages/Goals'
 import LearningPath from '../pages/LearningPath'
 import Calendar from '../pages/Calendar'
 import Profile from '../pages/Profile'
@@ -17,8 +18,9 @@ const App = () => (
       <Route exact path='/' component={Home} />
       <Route exact path='/admin' component={Admin} />
       <Route exact path='/login' component={Login} />
-      <Route exact path='/learning' component={LearningPath} />
+      <Route exact path='/goals' component={Goals} />
       <Route exact path='/calendar' component={Calendar} />
+      <Route exact path='/learning' component={LearningPath} />
       <Route exact path='/profile' component={Profile} />
       <Route component={NotFound} />
     </Switch>
