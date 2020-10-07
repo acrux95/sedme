@@ -41,7 +41,7 @@ export const GlobalState = (props) => {
   );
 };
 
-const reducer = (state, action) => {
-    switch(action.type)
-};
+// const reducer = (state, action) => {
+//     switch(action.type)
+// };
 export default reducer;
