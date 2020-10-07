@@ -19,8 +19,8 @@ const Login = (props) => {
     // }).then((res) => console.log(res));
     axios
       .post('http://3.128.32.140:3000/api/auth/sigin', {
-        email: loginUsername,
-        password: loginPassword,
+        email: 'Fabian@sedme.com',
+        password: '12345678',
       })
       .then((res) => console.log(res));
   };
@@ -58,10 +58,10 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    LOGIN_REQUEST(form);
-    const history = useHistory();
-    history.replace('/home');
-    // login(form.email, form.password);
+    // LOGIN_REQUEST(form);
+    // const history = useHistory();
+    // history.replace('/home');
+    login(form.email, form.password);
   };
 
   // const postUser = () => {

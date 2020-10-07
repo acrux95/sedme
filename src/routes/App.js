@@ -54,8 +54,7 @@ const AppContainer = () => {
       <BrowserRouter>
         <Suspense>
           <Switch>
-            <Route exact path='/' component={Login} />
-            <Route component={NotFound} />
+            <Route component={Login} />
           </Switch>
         </Suspense>
       </BrowserRouter>
