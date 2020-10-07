@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 
+export const GlobalContext = React.createContext();
 
 const initialState = {
   loggedIn: {},
@@ -38,9 +39,3 @@ export const GlobalState = (props) => {
     </GlobalContext.Provider>
   );
 };
-
-const reducer = (state, action) => {
-    switch(action.type)
-};
-
-export const GlobalContext = React.createContext();
