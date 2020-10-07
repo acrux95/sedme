@@ -2,11 +2,28 @@ import React, { useState, useContext, useCallback } from 'react';
 import swal from 'sweetalert2';
 import { GlobalContext } from '../reducers';
 import { Link, useHistory } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 import '../assets/styles/components/Login.scss';
 import img from '../assets/static/logo-claro-190x190px-web.png';
 
 const Login = (props) => {
+  const login = (loginUsername, loginPassword) => {
+    // axios({
+    //   method: 'POST',
+    //   data: {
+    //     email: loginUsername,
+    //     password: loginPassword,
+    //   },
+    //   withCredentials: true,
+    //   url: 'http://3.128.32.140:3000/api/auth/sigin',
+    // }).then((res) => console.log(res));
+    axios
+      .post('http://3.128.32.140:3000/api/auth/sigin', {
+        email: loginUsername,
+        password: loginPassword,
+      })
+      .then((res) => console.log(res));
+  };
   const [{ loggedUser, user }, dispatch] = useContext(GlobalContext);
 
   const LOGIN_REQUEST = useCallback(
@@ -44,6 +61,7 @@ const Login = (props) => {
     LOGIN_REQUEST(form);
     const history = useHistory();
     history.replace('/home');
+    // login(form.email, form.password);
   };
 
   // const postUser = () => {
