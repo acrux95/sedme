@@ -9,132 +9,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import Day from './Day'
 
-export default function Month() {
-  const month = 'September'
-  const year = 2020
-
-  const week = [
-    {
-      day: 30,
-      activities: [
-        {
-          color: 'red',
-          hour: '2pm',
-          description: 'Reunion de ',
-        },
-        {
-          color: 'red',
-          hour: '5pm',
-          description: 'Curso de ',
-        },
-      ],
-    },
-    {
-      day: 31,
-      activities: [
-        {
-          color: 'red',
-          hour: '2pm',
-          description: 'Reunion ',
-        },
-        {
-          color: 'red',
-          hour: '5pm',
-          description: 'Curso de ',
-        },
-      ],
-    },
-    {
-      day: 31,
-      activities: [
-        {
-          color: 'red',
-          hour: '2pm',
-          description: 'Reunion ',
-        },
-        {
-          color: 'red',
-          hour: '5pm',
-          description: 'Curso de ',
-        },
-      ],
-    },
-    {
-      day: 31,
-      activities: [
-        {
-          color: 'red',
-          hour: '2pm',
-          description: 'Reunion ',
-        },
-        {
-          color: 'red',
-          hour: '5pm',
-          description: 'Curso de ',
-        },
-      ],
-    },
-    {
-      day: 31,
-      activities: [
-        {
-          color: 'red',
-          hour: '2pm',
-          description: 'Reunion ',
-        },
-        {
-          color: 'red',
-          hour: '5pm',
-          description: 'Curso de ',
-        },
-      ],
-    },
-    {
-      day: 31,
-      activities: [
-        {
-          color: 'red',
-          hour: '2pm',
-          description: 'Reunion ',
-        },
-        {
-          color: 'red',
-          hour: '5pm',
-          description: 'Curso de ',
-        },
-      ],
-    },
-    {
-      day: 31,
-      activities: [
-        {
-          color: 'red',
-          hour: '2pm',
-          description: 'Reunion ',
-        },
-        {
-          color: 'red',
-          hour: '5pm',
-          description: 'Curso de ',
-        },
-      ],
-    },
-  ]
+export default function Month({ data }) {
+  console.log(data)
 
   return (
     <>
-      <div className='calendarHeader'>
-        Calendar
-        <FontAwesomeIcon icon={faArrowLeft} />
-        {month} {year}
-        <FontAwesomeIcon icon={faArrowRight} />
-        <FontAwesomeIcon icon={faSearch} />
-        <select name='cars' id='cars' className='select'>
-          <option value='volvo'>Month</option>
-          <option value='saab'>Week</option>
-          <option value='mercedes'>Day</option>
-        </select>
-      </div>
       <div className='month'>
         <div className='month__week'>
           <div className='month__header'>Sunday</div>
@@ -145,25 +24,36 @@ export default function Month() {
           <div className='month__header'>Friday</div>
           <div className='month__header'>Saturday</div>
         </div>
+
         <div className='week'>
-          {week.map((r) => (
-            <Day day={r.day} activities={r.activities} />
-          ))}
+          {data.w1
+            ? data.w1.map((dayData) => <Day data={dayData} />)
+            : ''}
         </div>
         <div className='week'>
-          {week.map((r) => (
-            <Day day={r.day} activities={r.activities} />
-          ))}
+          {data.w1
+            ? data.w2.map((dayData) => <Day data={dayData} />)
+            : ''}
         </div>
         <div className='week'>
-          {week.map((r) => (
-            <Day day={r.day} activities={r.activities} />
-          ))}
+          {data.w1
+            ? data.w3.map((dayData) => <Day data={dayData} />)
+            : ''}
         </div>
         <div className='week'>
-          {week.map((r) => (
-            <Day day={r.day} activities={r.activities} />
-          ))}
+          {data.w1
+            ? data.w4.map((dayData) => <Day data={dayData} />)
+            : ''}
+        </div>
+        <div className='week'>
+          {data.w1
+            ? data.w5.map((dayData) => <Day data={dayData} />)
+            : ''}
+        </div>
+        <div className='week'>
+          {data.w1
+            ? data.w6.map((dayData) => <Day data={dayData} />)
+            : ''}
         </div>
       </div>
     </>
