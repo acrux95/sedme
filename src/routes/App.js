@@ -19,24 +19,6 @@ import LearningPath from '../pages/LearningPath';
 import Calendar from '../pages/Calendar';
 import Profile from '../pages/Profile';
 
-<<<<<<< HEAD
-const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/admin' component={Admin} />
-      <Route exact path='/login' component={Login} />
-      <Route exact path='/goals' component={Goals} />
-      <Route exact path='/learning' component={LearningPath} />
-      <Route exact path='/calendar' component={Calendar} />
-      <Route exact path='/learning' component={LearningPath} />
-      <Route exact path='/profile' component={Profile} />
-      <Route component={NotFound} />
-    </Switch>
-  </BrowserRouter>
-)
-export default App;
-
 import '../assets/styles/App.scss';
 
 const App = () => {
@@ -82,4 +64,3 @@ const AppContainer = () => {
 };
 
 export default App;
->>>>>>> master
