@@ -3,7 +3,11 @@ import '../../assets/styles/components/Table.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons'
-import { faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import {
+  faPencilAlt,
+  faTrashAlt,
+  faRoute,
+} from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import Modal from '../Modal'
@@ -11,6 +15,7 @@ import Modal from '../Modal'
 const Users = () => {
   const [users, setUsers] = useState([])
   const [modal, setModal] = useState(false)
+  const [isNew, setIsNew] = useState(false)
   const [filter, setFilter] = useState([])
   const [form, setForm] = useState({
     roleid: 1,
@@ -23,6 +28,11 @@ const Users = () => {
     password: '12345678',
     age: '10',
   })
+
+  
+  useEffect(() => {
+    update()
+  }, [])
 
   const nuevo = () => {
     setModal(!modal)
@@ -65,17 +75,49 @@ const Users = () => {
     })
   }
 
-  useEffect(() => {
-    update()
-  }, [])
-
-  const edit = (user) => {
+  const btnEdit = (user) => {
     console.log(user)
     setForm(user)
     setModal(!modal)
   }
 
-  const deleteUser = (user) => {
+  const btnPath = (user) => {
+    console.log(user)
+    Swal.fire({
+      title: '<strong>Learning Path</strong>',
+      html: `
+      <h5>${user.name} ${user.lastname}</h5>
+      <h4>FrontEndPath</h6>
+      <table style="width:100%">
+  <tr>
+    <th>Week</th>
+    <th>type</th>
+    <th>Activity</th>
+    <th>Link</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Basic Skills</td>
+    <td>Curso de fundamentos de TS</td>
+    <td><a href='#'>Zelda</></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Basic Skills</td>
+    <td>Angular</td>
+    <td><a href='#'>Zelda</></td>
+  </tr>
+</table>
+      `,
+      showCloseButton: true,
+      showCancelButton: true,
+      focusConfirm: false,
+      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+    })
+  }
+
+  const btnDelete = (user) => {
     Swal.fire({
       title: `Deseas eliminar a ${user.name}`,
       showCancelButton: true,
@@ -129,9 +171,13 @@ const Users = () => {
               <td>{r.phone}</td>
               <td>
                 <div className='buttons'>
-                  <FontAwesomeIcon onClick={() => edit(r)} icon={faPencilAlt} />
                   <FontAwesomeIcon
-                    onClick={() => deleteUser(r)}
+                    onClick={() => btnEdit(r)}
+                    icon={faPencilAlt}
+                  />
+                  <FontAwesomeIcon onClick={() => btnPath(r)} icon={faRoute} />
+                  <FontAwesomeIcon
+                    onClick={() => btnDelete(r)}
                     icon={faTrashAlt}
                   />
                 </div>
