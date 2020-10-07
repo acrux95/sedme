@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 
+||||||| 9b59731
+<<<<<<< HEAD
+=======
+>>>>>>> master
 import React, { useReducer } from 'react';
 
 export const GlobalContext = React.createContext();
@@ -40,8 +45,19 @@ export const GlobalState = (props) => {
     </GlobalContext.Provider>
   );
 };
+<<<<<<< HEAD
 
 // const reducer = (state, action) => {
 //     switch(action.type)
 // };
 export default reducer;
+||||||| 9b59731
+=======
+const reducer = (state, action) => {
+    switch(action.type)
+};
+export default reducer;
+>>>>>>> 499ca864553c477be31100f0be033f4aef8d0c5b
+=======
+
+>>>>>>> master
