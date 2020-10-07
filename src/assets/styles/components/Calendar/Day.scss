@@ -9,33 +9,57 @@
   flex-direction: column;
   align-items: center;
   font-size: 12px;
-  &__dot {
+  &:hover {
+    border: $main-color 1px solid;
+  }
+  &-secondary {
+    opacity: 0.5;
+  }
+  &_current {
     position: relative;
     height: 25px;
     width: 25px;
     border-radius: 50%;
     background-color: $main-color;
+    color: white;
   }
+
+  &__dot {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+  }
+
   &__number {
     font-size: 14px;
     position: absolute;
-    top: 3px;
-    right: 4px;
-    color: white;
+    top: 4px;
+    right: 9px;
     font-weight: bold;
   }
 }
 
+.activities {
+  overflow: hidden;
+}
+
 .activity {
+  padding: 2px;
   color: grey;
   display: flex;
   flex-direction: row;
   overflow: hidden;
+  .blue {
+    background-color: #79cfe2;
+  }
+  .green {
+    background-color: #79e290;
+  }
 
   &__dot {
     height: 15px;
     width: 15px;
-    background-color: cyan;
     border-radius: 50%;
   }
   &__hour {

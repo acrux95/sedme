@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useReducer } from 'react';
 
 export const GlobalContext = React.createContext();
@@ -39,3 +40,9 @@ export const GlobalState = (props) => {
     </GlobalContext.Provider>
   );
 };
+=======
+const reducer = (state, action) => {
+    switch(action.type)
+};
+export default reducer;
+>>>>>>> 499ca864553c477be31100f0be033f4aef8d0c5b
