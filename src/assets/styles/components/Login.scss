@@ -15,6 +15,14 @@
   justify-self: center;
   max-width: 100px;
 }
+form {
+  height: 80%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .mainContainer {
   grid-column: 1/3;
@@ -22,18 +30,21 @@
   align-self: center;
   justify-self: center;
   width: 40vw;
-  height: 45vh;
+  height: 35vh;
   background-color: $white-color;
   border: 1px solid $main-light-color;
   border-radius: 5%;
-  display: grid;
-  grid-template-columns: 10% 40% 40% 10%;
-  grid-template-areas:
-    '. login login .'
-    '. inputuser inputuser .'
-    '. inputpassword inputpassword .'
-    '. button button .'
-    '. recover recover .';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // grid-template-columns: 10% 40% 40% 10%;
+  // grid-template-areas:
+  //   '. login login .'
+  //   '. inputuser inputuser .'
+  //   '. inputpassword inputpassword .'
+  //   '. button button .'
+  //   '. recover recover .';
   .loginTitle {
     grid-area: login;
     margin: 0;
@@ -83,6 +94,7 @@
   }
   .enterButton {
     grid-area: button;
+    width: 90%;
     height: 35px;
     align-self: center;
     background-color: $main-color;
