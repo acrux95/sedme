@@ -5,15 +5,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
   faClipboardList,
-  faHatWizard,
+  // faHatWizard,
   faCalendarAlt,
   faChartBar,
   faUsers,
-  faQuestionCircle,
+  // faQuestionCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 const Aside = () => (
   <aside>
+    <h1>SEDME</h1>
     <ul>
       <li>
         <Link to='/'>
@@ -27,12 +28,12 @@ const Aside = () => (
           <p>Learning Path</p>
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link to='/activities'>
           <FontAwesomeIcon icon={faHatWizard} />
           <p>Activities</p>
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link to='/calendar'>
           <FontAwesomeIcon icon={faCalendarAlt} />
@@ -51,12 +52,12 @@ const Aside = () => (
           <p>Users</p>
         </Link>
       </li>
-      <li>
+      {/* <li>
         <Link to='/help'>
           <FontAwesomeIcon icon={faQuestionCircle} />
           <p>Help </p>
         </Link>
-      </li>
+      </li> */}
     </ul>
   </aside>
 );
