@@ -129,30 +129,26 @@ const Groups = () => {
 
       <div className='right'>Paginator Here</div>
 
-      {modal ? (
-        <Modal visible={modal}>
-          <div className='modal-content'>
-            <span className='close' onClick={toggleModal}>
-              &times;
-            </span>
-            <h2>New Group</h2>
-            <span className='label'>Name</span>
-            <input
-              className='input'
-              type='text'
-              name='name'
-              onChange={handleInputChange}
-            />
-            <br />
-            <br></br>
-            <button className='btn' onClick={addGroup}>
-              Guardar
-            </button>
-          </div>
-        </Modal>
-      ) : (
-        <></>
-      )}
+      <Modal visible={modal}>
+        <div className='modal-content'>
+          <span className='close' onClick={toggleModal}>
+            &times;
+          </span>
+          <h2>New Group</h2>
+          <span className='label'>Name</span>
+          <input
+            className='input'
+            type='text'
+            name='name'
+            onChange={handleInputChange}
+          />
+          <br />
+          <br></br>
+          <button className='btn' onClick={addGroup}>
+            Guardar
+          </button>
+        </div>
+      </Modal>
     </>
   )
 }

@@ -5,8 +5,8 @@ import Layout from '../components/Layout'
 const NotFound = () => (
   <>
     <Layout>
-      <h1>No encontrado 404</h1>
-      <img width='50%' src={error}></img>
+      <h1 className='PageTitle'>No encontrado 404</h1>
+      <img class='center' width='50%' src={error}></img>
     </Layout>
   </>
 )

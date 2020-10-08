@@ -13,10 +13,31 @@ aside {
   }
   h1 {
     text-align: center;
-    padding-top: 8px;
-    letter-spacing: 10px;
-    font-size: 2rem;
+    padding-top: 0;
+    letter-spacing: 12px;
+    font-size: 32px;
   }
+
+  @keyframes bop {
+    0% {
+      transform: scale(0.9);
+    }
+    50%,
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bopB {
+    0% {
+      transform: scale(0.9);
+    }
+    80%,
+    100% {
+      transform: scale(1) rotateZ(-3deg);
+    }
+  }
+
   ul {
     padding-left: 0;
     display: flex;

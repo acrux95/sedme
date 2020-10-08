@@ -16,7 +16,7 @@ const Admin = (props) => {
   return (
     <>
       <Layout path={props.location.pathname}>
-        <h1>Administración</h1>
+        <h1 className='PageTitle'>Administración</h1>
         <div className='tab'>
           <button
             className={tab ? 'tab__btn active' : 'tab__btn'}

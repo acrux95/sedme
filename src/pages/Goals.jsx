@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../assets/styles/components/Goals.scss';
-import Layout from '../components/Layout';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import '../assets/styles/components/Goals.scss'
+import Layout from '../components/Layout'
 
 /* 
 Super importante con los checkbox, el id debe corresponder con el for de los label, de lo contrario JAMÁS funcionará correctamente.
@@ -13,10 +13,8 @@ Hay 4 clases para la fecha límite de las metas.
  */
 const Goals = (props) => (
   <Layout path={props.location.pathname}>
+    <h1 className='PageTitle'>Learning Path</h1>
     <section className='content'>
-      <div className='title-container'>
-        <h1>Learning Path</h1>
-      </div>
       <div className='goals'>
         <div className='goals-container'>
           <div className='check-box'>
@@ -135,4 +133,4 @@ const Goals = (props) => (
   </Layout>
 )
 
-export default Goals;
+export default Goals

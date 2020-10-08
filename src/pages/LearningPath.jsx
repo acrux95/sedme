@@ -1,16 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Layout from '../components/Layout';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import Layout from '../components/Layout'
 
-import '../assets/styles/components/LearningPath.scss';
+import '../assets/styles/components/LearningPath.scss'
 
 const LearningPath = (props) => (
   <Layout path={props.location.pathname}>
+    <h1 className='PageTitle'>Learning Path</h1>
     <section className='content'>
-      <div className='title-container'>
-        <h1>Learning Path</h1>
-      </div>
-
       <div className='courses-container'>
         <div className='course-box'>
           <img src='html.png' alt='Cursos del módulo' />
@@ -160,4 +157,4 @@ const LearningPath = (props) => (
   </Layout>
 )
 
-export default LearningPath;
+export default LearningPath

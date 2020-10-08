@@ -12,8 +12,21 @@ const Help = (props) => {
       <Layout path={props.location.pathname}>
         <h1 className='PageTitle'>Help</h1>
         <p>Here you will find user help</p>
+        <hr />
         <h1 className='PageTitle'>About</h1>
-        <img src={logo} height="350px" alt='logo' />
+        <p>
+          Application developed by:
+          <ul>
+            <li>Oscar Palomino</li>
+            <li>Daniel Guecha</li>
+            <li>Leonel León</li>
+            <li>Jonathan Chamarro</li>
+            <li>Armando Cruz</li>
+            <li>Fernando Castelan</li>
+            <li>Walter Díaz</li>
+          </ul>
+        </p>
+        <img className='center' src={logo} height='350px' alt='logo' />
       </Layout>
     </>
   )
