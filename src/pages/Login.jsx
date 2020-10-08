@@ -9,14 +9,20 @@ import img from '../assets/static/logo-claro-190x190px-web.png';
 const Login = (props) => {
   const [{ loggedUser, user }, dispatch] = useContext(GlobalContext);
 
-  const history = useHistory();
-
   const LOGIN_REQUEST = useCallback(
     (data) => {
       dispatch({ type: 'LOGIN_REQUEST', payload: data });
     },
     [dispatch]
   );
+
+  const history = useHistory();
+
+  if (localStorage.getItem('user')) {
+    const localUser = JSON.parse(localStorage.getItem('user'));
+    if (Object.keys(localUser).length > 1) LOGIN_REQUEST(localUser);
+    history.replace('/home');
+  }
 
   const [form, setValues] = useState({
     username: '',
@@ -56,6 +62,7 @@ const Login = (props) => {
             id: res.data.userId,
             jwt: res.data.access_token,
           };
+          localStorage.setItem('user', JSON.stringify(currentUser));
           Promise.resolve(LOGIN_REQUEST(currentUser)).then(() =>
             history.replace('/home')
           );
