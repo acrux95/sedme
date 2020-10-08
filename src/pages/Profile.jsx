@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import profilePhoto from '../assets/static/profilephoto.png';
 
 const Profile = () => {
+    
   return (
     <>
       <Layout>
