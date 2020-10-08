@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import Month from '../components/Calendar/Month'
 import Week from '../components/Calendar/Week'
+import ByDay from '../components/Calendar/ByDay'
 import moment from 'moment'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,9 +10,10 @@ import {
   faArrowRight,
   faArrowLeft,
   faSearch,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons'
 
-const Calendar = () => {
+const Calendar = (props) => {
   const date = moment()
 
   const [selectedDay, setSelectedDay] = useState(date)
@@ -27,10 +29,12 @@ const Calendar = () => {
   }
   const leftArrow = () => {
     let newDate = selectedDay.clone()
+    console.log(newDate)
     setSelectedDay(newDate.subtract(1, 'months'))
   }
   const rightArrow = () => {
     let newDate = selectedDay.clone()
+    console.log(newDate)
     setSelectedDay(newDate.add(1, 'months'))
   }
   const updateCalendarDays = () => {
@@ -53,16 +57,16 @@ const Calendar = () => {
     ]
     //TODO getActivities
     let activities = [
-      {
-        color: 'blue',
-        hour: '2pm',
-        description: 'Reunion de React',
-      },
-      {
-        color: 'green',
-        hour: '5pm',
-        description: 'Curso de ',
-      },
+      // {
+      //   color: 'blue',
+      //   hour: '2pm',
+      //   description: 'Reunion de React',
+      // },
+      // {
+      //   color: 'green',
+      //   hour: '5pm',
+      //   description: 'Curso de ',
+      // },
     ]
     //Formato +++ datos Mes anterior
     const startOfMonth = selectedDay.clone().startOf('month').format('dddd')
@@ -113,7 +117,7 @@ const Calendar = () => {
       dd++
     } while (data.length < 43)
 
-    console.log(data)
+    // console.log(data)
 
     // Se cortan las semanas del mes
     let w1 = data.slice(0, 7)
@@ -128,7 +132,7 @@ const Calendar = () => {
   const renderType = () => {
     switch (type) {
       case 'd':
-        return <span>Vista de dia</span>
+        return <ByDay></ByDay>
         break
       case 'm':
         return <Month data={dataMonth}></Month>
@@ -143,21 +147,35 @@ const Calendar = () => {
   }
   return (
     <>
-      <Layout>
+      <Layout path={props.location.pathname}>
+        <h1 className='PageTitle'>Calendar</h1>
         <div className='calendarHeader'>
-          Calendar
-          <FontAwesomeIcon onClick={leftArrow} icon={faArrowLeft} />
-          {selectedDay.format('MMMM')} {selectedDay.format('YYYY')}
-          <FontAwesomeIcon onClick={rightArrow} icon={faArrowRight} />
+          <FontAwesomeIcon
+            className='cursor'
+            onClick={leftArrow}
+            icon={faArrowLeft}
+          />
+          <div className='month-lbl'>
+            {selectedDay.format('MMMM')} {selectedDay.format('YYYY')}
+          </div>
+          <FontAwesomeIcon
+            className='cursor'
+            onClick={rightArrow}
+            icon={faArrowRight}
+          />
           <FontAwesomeIcon icon={faSearch} />
+          {date.format('LLLL')}
           <select value={type} onChange={handleChange} className='select'>
             <option value='m'>Month</option>
             <option value='w'>Week</option>
             <option value='d'>Day</option>
           </select>
-          {date.format('LLLL')}
         </div>
         {renderType()}
+        <button className='right btn-add'>
+          <FontAwesomeIcon icon={faPlus} />
+          &nbsp;Agregar Actividad
+        </button>
       </Layout>
     </>
   )

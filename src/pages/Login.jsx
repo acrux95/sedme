@@ -1,12 +1,33 @@
 import React, { useState, useContext, useCallback } from 'react';
 import swal from 'sweetalert2';
-import { GlobalContext } from '../reducers';
 import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { GlobalContext } from '../reducers';
 import '../assets/styles/components/Login.scss';
 import img from '../assets/static/logo-claro-190x190px-web.png';
 
 const Login = (props) => {
+  const [{ loggedUser, user }, dispatch] = useContext(GlobalContext);
+
+  const LOGIN_REQUEST = useCallback(
+    (data) => {
+      dispatch({ type: 'LOGIN_REQUEST', payload: data });
+    },
+    [dispatch]
+  );
+
+  const history = useHistory();
+
+  if (localStorage.getItem('user')) {
+    const localUser = JSON.parse(localStorage.getItem('user'));
+    if (Object.keys(localUser).length > 1) LOGIN_REQUEST(localUser);
+    history.replace('/home');
+  }
+
+  const [form, setValues] = useState({
+    username: '',
+  });
+
   const login = (loginUsername, loginPassword) => {
     // axios({
     //   method: 'POST',
@@ -17,21 +38,45 @@ const Login = (props) => {
     //   withCredentials: true,
     //   url: 'http://3.128.32.140:3000/api/auth/sigin',
     // }).then((res) => console.log(res));
+    // axios
+    //   .post('http://3.128.32.140:3000/api/auth/sigin', {
+    //     Username: 'Fabian@sedme.com',
+    //     Password: '12345678',
+    //   })
     axios
-      .post('http://3.128.32.140:3000/api/auth/sigin', {
-        email: loginUsername,
-        password: loginPassword,
+      .post(
+        'http://3.128.32.140:3000/api/auth/sigin',
+        {},
+        {
+          auth: {
+            username: loginUsername,
+            password: loginPassword,
+          },
+        }
+      )
+      .then((res) => {
+        if (res.status === 202) {
+          console.log(res);
+          const currentUser = {
+            username: res.data.userName,
+            id: res.data.userId,
+            jwt: res.data.access_token,
+          };
+          localStorage.setItem('user', JSON.stringify(currentUser));
+          Promise.resolve(LOGIN_REQUEST(currentUser)).then(() =>
+            history.replace('/home')
+          );
+          console.log(currentUser);
+          // setTimeout(, 10000);
+        }
       })
-      .then((res) => console.log(res));
+      .then(() => {
+        // history.replace('/home');
+        console.log(user);
+      });
   };
-  const [{ loggedUser, user }, dispatch] = useContext(GlobalContext);
-
-  const LOGIN_REQUEST = useCallback(
-    (data) => {
-      dispatch({ type: 'LOGIN_REQUEST', payload: data });
-    },
-    [dispatch]
-  );
+  if (Object.keys(user) > 1) {
+  }
 
   // const [user, setUser] = useState({
   //   email: '',
@@ -45,10 +90,6 @@ const Login = (props) => {
   //   });
   // };
 
-  const [form, setValues] = useState({
-    email: '',
-  });
-
   const handleInput = (e) => {
     setValues({
       ...form,
@@ -58,10 +99,7 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    LOGIN_REQUEST(form);
-    const history = useHistory();
-    history.replace('/home');
-    // login(form.email, form.password);
+    login(form.email, form.password);
   };
 
   // const postUser = () => {

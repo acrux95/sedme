@@ -1,10 +1,21 @@
 @import '../Vars.scss';
 .page {
   display: grid;
-  grid-template-rows: 80px 9fr;
-  grid-template-columns: 2fr 8fr;
+  grid-template-rows: 66px 9fr;
+  grid-template-columns: 280px auto;
   grid-template-areas: "menu header" "menu content";
 }
-.content{
+
+.content {
   grid-area: content;
+  padding: 18px;
 }
+
+.title-container {
+    margin-top: 8px;
+    color: $text-color;
+    h1{
+      margin: 0;
+      margin-left: 10%;
+    }
+  }

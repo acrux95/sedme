@@ -39,4 +39,7 @@ export const GlobalState = (props) => {
     </GlobalContext.Provider>
   );
 };
-
+// const reducer = (state, action) => {
+//     switch(action.type)
+// };
+export default reducer;
