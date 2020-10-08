@@ -7,7 +7,7 @@ import Layout from '../components/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faUsers } from '@fortawesome/free-solid-svg-icons'
 
-const Admin = () => {
+const Admin = (props) => {
   const [tab, setTab] = useState(false)
   const clickTab = () => {
     setTab(!tab)
@@ -15,20 +15,20 @@ const Admin = () => {
 
   return (
     <>
-      <Layout>
+      <Layout path={props.location.pathname}>
         <h1>Administración</h1>
         <div className='tab'>
           <button
             className={tab ? 'tab__btn active' : 'tab__btn'}
             onClick={clickTab}
           >
-          <FontAwesomeIcon icon={faUser} /> Usuarios
+            <FontAwesomeIcon icon={faUser} /> Usuarios
           </button>
           <button
             className={!tab ? 'tab__btn active' : 'tab__btn'}
             onClick={clickTab}
           >
-          <FontAwesomeIcon icon={faUsers} /> Grupos
+            <FontAwesomeIcon icon={faUsers} /> Grupos
           </button>
         </div>
         <div className='tab__content'>{tab ? <Users /> : <Groups />}</div>

@@ -11,7 +11,7 @@ import {
   faSearch,
 } from '@fortawesome/free-solid-svg-icons'
 
-const Calendar = () => {
+const Calendar = (props) => {
   const date = moment()
 
   const [selectedDay, setSelectedDay] = useState(date)
@@ -143,7 +143,7 @@ const Calendar = () => {
   }
   return (
     <>
-      <Layout>
+      <Layout path={props.location.pathname}>
         <div className='calendarHeader'>
           Calendar
           <FontAwesomeIcon onClick={leftArrow} icon={faArrowLeft} />

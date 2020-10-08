@@ -29,7 +29,6 @@ const Users = () => {
     age: '10',
   })
 
-  
   useEffect(() => {
     update()
   }, [])
@@ -62,6 +61,20 @@ const Users = () => {
   }
 
   const update = () => {
+    axios
+      .post(
+        'http://3.128.32.140:3000/api/auth/sigin',{},
+        {
+          auth: {
+            Username: 'Fabian@sedme.com',
+            Password: '12345678',
+          }
+        }
+      )
+      .then((res) => {
+        console.log(res)
+      })
+
     axios.get(`http://3.128.32.140:3000/api/users/`).then((res) => {
       const users = res.data.data
       setUsers(users)

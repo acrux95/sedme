@@ -9,6 +9,7 @@ import Goals from '../pages/Goals'
 import LearningPath from '../pages/LearningPath'
 import Calendar from '../pages/Calendar'
 import Profile from '../pages/Profile'
+import Help from '../pages/Help'
 
 import '../assets/styles/App.scss'
 
@@ -22,6 +23,7 @@ const App = () => (
       <Route exact path='/calendar' component={Calendar} />
       <Route exact path='/learning' component={LearningPath} />
       <Route exact path='/profile' component={Profile} />
+      <Route exact path='/help' component={Help} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>

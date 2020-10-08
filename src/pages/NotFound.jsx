@@ -6,10 +6,9 @@ const NotFound = () => (
   <>
     <Layout>
       <h1>No encontrado 404</h1>
-      <img src={error}></img>
+      <img width='50%' src={error}></img>
     </Layout>
   </>
 )
 
 export default NotFound
-
