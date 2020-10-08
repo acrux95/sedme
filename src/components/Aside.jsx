@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHome,
   faClipboardList,
-  faHatWizard,
+  // faHatWizard,
   faCalendarAlt,
   faChartBar,
   faUsers,
@@ -31,12 +31,12 @@ const Aside = ({ path }) => {
             <p>Learning Path</p>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to='/activities'>
             <FontAwesomeIcon icon={faHatWizard} />
             <p>Activities</p>
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to='/calendar' class={path === '/calendar' ? 'active' : ''}>
             <FontAwesomeIcon icon={faCalendarAlt} />

@@ -1,6 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Layout from '../components/Layout'
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
+import CourseCard from '../components/CourseCard';
+import axios from 'axios';
+import { GlobalContext } from '../reducers';
 
 import '../assets/styles/components/LearningPath.scss'
 
