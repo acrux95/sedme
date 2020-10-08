@@ -44,7 +44,7 @@ input {
 .input {
   background-color: $background-color;
   border-radius: 5px;
-  border: 2px solid $main-light-color;
+  border: 2px solid $main-color-light;
   font-size: 18px;
   height: 36px;
   padding: 4px;
@@ -54,6 +54,9 @@ input {
   }
 }
 //Utilities
+.main-color{
+  color:$second-color;
+}
 .text-center {
   text-align: center !important;
 }

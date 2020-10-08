@@ -4,7 +4,7 @@
   text-align: center;
 }
 .inisigthContainer {
-  width: 90%;
+  width: 95%;
   margin: 30px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -12,14 +12,16 @@
 }
 
 .insigth {
-  background-color: rgba($color: #353434, $alpha: 0.1);
+  background-color: $main-light-color;
+  border-radius: 8px;
   border: 1px solid grey;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
-  padding: 30px;
+  padding: 18px;
   h3 {
+    color:$main-color;
     font-size: 25px;
   }
   .progress {
