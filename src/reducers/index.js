@@ -39,3 +39,4 @@ export const GlobalState = (props) => {
     </GlobalContext.Provider>
   );
 };
+
