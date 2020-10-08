@@ -1,19 +1,11 @@
-import React from 'react';
-import { Link, useHistory, useCallback, useContext } from 'react-router-dom';
+import React, { useCallback, useContext } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import '../assets/styles/components/Header.scss';
 import profile from '../assets/static/user-icon.png';
-
 import { GlobalContext } from '../reducers';
 
-function Header(logout) {
-  // const [dispatch] = useContext(GlobalContext);
-
-  // // const LOGOUT_REQUEST = useCallback(
-  //   (data) => {
-  //     dispatch({ type: 'LOGOUT_REQUEST', payload: data });
-  //   },
-  //   [dispatch]
-  // );
+function Header({ username }) {
+  const [{ loggedUser, user }, dispatch] = useContext(GlobalContext);
 
   const history = useHistory();
 
@@ -26,7 +18,7 @@ function Header(logout) {
     <>
       <header className='header'>
         <div className='username'>
-          <a href='/'>Leomaris Reyes</a>
+          <a href='/'>{user.username}</a>
         </div>
         <div>|</div>
         <div className='call-to-action'>
