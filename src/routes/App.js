@@ -45,6 +45,7 @@ const AppContainer = () => {
             <Route exact path='/calendar' component={Calendar} />
             <Route exact path='/learning' component={LearningPath} />
             <Route exact path='/profile' component={Profile} />
+            <Route exact path='/help' component={Help} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
