@@ -39,12 +39,9 @@ export const GlobalState = (props) => {
     </GlobalContext.Provider>
   );
 };
-<<<<<<< HEAD
-||||||| 5d75b23
 
-=======
 // const reducer = (state, action) => {
 //     switch(action.type)
 // };
 export default reducer;
->>>>>>> master
+
