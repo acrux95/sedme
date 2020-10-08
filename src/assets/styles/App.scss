@@ -41,14 +41,6 @@ input {
     background-color: $main-color-light;
   }
 }
-
-.right {
-  float: right;
-}
-.block {
-  width: 100%;
-}
-
 .input {
   background-color: $background-color;
   border-radius: 5px;
@@ -61,21 +53,22 @@ input {
     border: 2px solid $main-color;
   }
 }
-
-
-
-/* Sección del contenido */
-.content {
-  grid-area: content;
-  padding: 18px;
+//Utilities
+.text-center {
+  text-align: center !important;
 }
-
-.title-container {
-    margin-top: 10px;
-    padding: 15px 15px 15px 5px;
-    color: $text-color;
-    h1{
-      margin: 0;
-      margin-left: 10%;
-    }
-  }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.right {
+  float: right;
+}
+.block {
+  width: 100%;
+}
+.cursor {
+  cursor: pointer;
+}

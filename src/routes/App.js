@@ -5,33 +5,33 @@ import React, {
   useCallback,
   Suspense,
   lazy,
-} from 'react';
+} from 'react'
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { GlobalState, GlobalContext } from '../reducers/index';
+import Home from '../pages/Home'
+import Login from '../pages/Login'
+import NotFound from '../pages/NotFound'
+import Admin from '../pages/Admin'
+import Goals from '../pages/Goals'
+import LearningPath from '../pages/LearningPath'
+import Calendar from '../pages/Calendar'
+import Profile from '../pages/Profile'
+import Help from '../pages/Help'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { GlobalState, GlobalContext } from '../reducers/index'
 
-import Home from '../pages/Home';
-import Login from '../pages/Login';
-import NotFound from '../pages/NotFound';
-import Admin from '../pages/Admin';
-import Goals from '../pages/Goals';
-import LearningPath from '../pages/LearningPath';
-import Calendar from '../pages/Calendar';
-import Profile from '../pages/Profile';
-
-import '../assets/styles/App.scss';
+import '../assets/styles/App.scss'
 
 const App = () => {
   return (
     <GlobalState>
       <AppContainer></AppContainer>
     </GlobalState>
-  );
-};
+  )
+}
 
 const AppContainer = () => {
-  const [{ user }, dispatch] = useContext(GlobalContext);
-  console.log(user);
+  const [{ user }, dispatch] = useContext(GlobalContext)
+  console.log(user)
   if (Object.keys(user).length > 1) {
     return (
       <BrowserRouter>
@@ -45,11 +45,12 @@ const AppContainer = () => {
             <Route exact path='/calendar' component={Calendar} />
             <Route exact path='/learning' component={LearningPath} />
             <Route exact path='/profile' component={Profile} />
+            <Route exact path='/help' component={Help} />
             <Route component={NotFound} />
           </Switch>
         </Suspense>
       </BrowserRouter>
-    );
+    )
   } else {
     return (
       <BrowserRouter>
@@ -59,8 +60,8 @@ const AppContainer = () => {
           </Switch>
         </Suspense>
       </BrowserRouter>
-    );
+    )
   }
-};
+}
 
-export default App;
+export default App

@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 
 import '../assets/styles/components/Home.scss';
 
-const Home = () => {
+const Home = (props) => {
   const showAlert = () => {
     swal.fire('Hola mundo', 'body');
   };
@@ -34,7 +34,7 @@ const Home = () => {
 
   return (
     <>
-      <Layout>
+      <Layout path={props.location.pathname}>
         {/* <Alert></Alert> */}
         <h1 className='PageTitle'>Hola otra vez Leomaris!</h1>
         <div className='inisigthContainer'>
@@ -69,7 +69,7 @@ const Home = () => {
         </div>
       </Layout>
     </>
-  );
+  )
 };
 
 export default Home;

@@ -29,7 +29,6 @@ const Users = () => {
     age: '10',
   })
 
-  
   useEffect(() => {
     update()
   }, [])
@@ -62,6 +61,21 @@ const Users = () => {
   }
 
   const update = () => {
+    axios
+      .post(
+        'http://3.128.32.140:3000/api/auth/sigin',
+        {},
+        {
+          auth: {
+            Username: 'Fabian@sedme.com',
+            Password: '12345678',
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res)
+      })
+
     axios.get(`http://3.128.32.140:3000/api/users/`).then((res) => {
       const users = res.data.data
       setUsers(users)
@@ -189,66 +203,62 @@ const Users = () => {
       <br />
       <div className='right'>Paginator Here</div>
 
-      {modal ? (
-        <Modal visible={modal}>
-          <div className='modal-content'>
-            <span className='close' onClick={nuevo}>
-              &times;
-            </span>
-            <h2>Nuevo usuario</h2>
-            <span className='label'>Name</span>
-            <input
-              className='input'
-              type='text'
-              value={form.name}
-              onChange={handleInputChange}
-              name='name'
-            />
-            <br />
-            <span className='label'>Lastname</span>
-            <input
-              className='input'
-              type='text'
-              value={form.lastname}
-              onChange={handleInputChange}
-              name='lastname'
-            />
-            <br />
-            <span className='label'>Edad</span>
-            <input
-              className='input'
-              type='text'
-              value={form.age}
-              onChange={handleInputChange}
-              name='age'
-            />
-            <br />
-            <span className='label'>Email</span>
-            <input
-              className='input'
-              type='text'
-              value={form.email}
-              onChange={handleInputChange}
-              name='email'
-            />
-            <br />
-            <span className='label'>Phone</span>
-            <input
-              className='input'
-              type='text'
-              value={form.phone}
-              onChange={handleInputChange}
-              name='phone'
-            />
-            <button className='btn' onClick={saveUser}>
-              Guardar
-            </button>
-            <br />
-          </div>
-        </Modal>
-      ) : (
-        <></>
-      )}
+      <Modal visible={modal}>
+        <div className='modal-content'>
+          <span className='close' onClick={nuevo}>
+            &times;
+          </span>
+          <h2>Nuevo usuario</h2>
+          <span className='label'>Name</span>
+          <input
+            className='input'
+            type='text'
+            value={form.name}
+            onChange={handleInputChange}
+            name='name'
+          />
+          <br />
+          <span className='label'>Lastname</span>
+          <input
+            className='input'
+            type='text'
+            value={form.lastname}
+            onChange={handleInputChange}
+            name='lastname'
+          />
+          <br />
+          <span className='label'>Edad</span>
+          <input
+            className='input'
+            type='text'
+            value={form.age}
+            onChange={handleInputChange}
+            name='age'
+          />
+          <br />
+          <span className='label'>Email</span>
+          <input
+            className='input'
+            type='text'
+            value={form.email}
+            onChange={handleInputChange}
+            name='email'
+          />
+          <br />
+          <span className='label'>Phone</span>
+          <input
+            className='input'
+            type='text'
+            value={form.phone}
+            onChange={handleInputChange}
+            name='phone'
+          />
+          <button className='btn' onClick={saveUser}>
+            Guardar
+          </button>
+          <br />
+        </div>
+      </Modal>
     </>
   )
 }

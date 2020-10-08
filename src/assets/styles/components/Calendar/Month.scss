@@ -15,7 +15,15 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
+.month-lbl{
+  color:$main-color;
+  text-align: center;
+  min-width: 180px;
+}
 .calendarHeader {
+  background-color: $main-light-color;
+  padding: 12px;
+  border-radius: 4px;
   font-size: 22px;
   margin-bottom: 18px;
   display: flex;
@@ -23,5 +31,14 @@
   font-weight: bold;
   justify-content: space-around;
 }
-
-//TEST
+.btn-add {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 18px;
+  padding: 12px;
+  display: flex;
+  border-radius: 8px;
+  color: $white-color;
+  background-color: $main-color;
+  text-decoration: none;
+}
