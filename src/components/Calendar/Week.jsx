@@ -14,33 +14,12 @@ import {
 
 const Week = () => (
   <section className='content'>
-    <div className='title-container'>
-      <h1>Calendar</h1>
-
-      <div className='pagination'>
-        <div className='back'>
-          <a href='#'>
-            <i className='far fa-arrow-alt-circle-left'></i>
-          </a>
-        </div>
-        <div className='next'>
-          <a href='#'>
-            <i className='far fa-arrow-alt-circle-right'></i>
-          </a>
-        </div>
-      </div>
-
-      <div className='montd-year'>
-        <h1>October 2020</h1>
-      </div>
-
-      <div className='search-button'>
-        <a href='#'>
-          <i className='fas fa-search'></i>
-        </a>
-        <div className='drop-menu'>
-          <h1>Weekly</h1>
-        </div>
+    <div className='search-button'>
+      <a href='#'>
+        <i className='fas fa-search'></i>
+      </a>
+      <div className='drop-menu'>
+        <h1>Weekly</h1>
       </div>
     </div>
 
@@ -367,14 +346,6 @@ const Week = () => (
         </tr>
       </tbody>
     </table>
-
-    {/* Botón añadir actividad */}
-    <div className='add-activity'>
-      <a href='#'>
-        <i className='fas fa-plus'></i>
-        <h1>Add activity</h1>
-      </a>
-    </div>
   </section>
 )
 

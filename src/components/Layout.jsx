@@ -9,11 +9,11 @@ import '../assets/styles/components/Layout.scss';
 
 const Layout = (props) => (
   <div className='page'>
-    <Aside />
+    <Aside path={props.path} />
     <Header />
     <section className='content'>{props.children}</section>
     {/* <Footer /> */}
   </div>
-)
+);
 
-export default Layout
+export default Layout;
