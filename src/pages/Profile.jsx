@@ -1,34 +1,35 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import '../assets/styles/components/Profile.scss';
 import Layout from '../components/Layout';
 import profilePhoto from '../assets/static/profilephoto.png';
-
+import { GlobalContext } from '../reducers'
 import axios from 'axios'
-import Swal from 'sweetalert2'
-import Modal from '../components/Modal'
 
-const Profile = () => {
-  const [users, setUsers] = useState([])
-  const [modal, setModal] = useState(false)
-  const [isNew, setIsNew] = useState(false)
-  const [filter, setFilter] = useState([])
-  const [form, setForm] = useState({
-    roleid: 1,
-    parentuserid: null,
-    groupid: 1,
-    name: 'user',
-    lastname: 'Diaz',
-    email: 'david@sedme.com',
-    phone: '322019248',
-    password: '12345678',
-    age: '10',
-  })
+const Profile = (props) => {
+  const [{ loggedUser, user }, dispatch] = useContext(GlobalContext)
+//   const id = user.id
   
-  useEffect(() => {
-    update()
-  }, [])
+  const [users, setUsers] = useState([])
+//   const [modal, setModal] = useState(false)
+//   const [isNew, setIsNew] = useState(false)
+  const [filter, setFilter] = useState([])
+//   const [form, setForm] = useState({
+//     roleid: 1,
+//     parentuserid: null,
+//     groupid: 1,
+//     name: Walter,
+//     lastname: 'Diaz',
+//     email: 'david@sedme.com',
+//     phone: '322019248',
+//     password: '12345678',
+//     age: '10',
+//   })
+  
+//   useEffect(() => {
+//     update()
+//   }, [])
 
   const handleInputChange = (event) => {
     setForm({
@@ -36,51 +37,46 @@ const Profile = () => {
       [event.target.name]: event.target.value,
     })
   }
-  const saveUser = () => {
-    axios
-      .post(`http://3.128.32.140:3000/api/users/`, { ...form })
-      .then((res) => {
-        update()
-        nuevo()
-        Swal.fire('User saved!', '', 'success')
-      })
-  }
-  const update = () => {
-    axios
-      .post(
-        'http://3.128.32.140:3000/api/auth/sigin',
-        {},
-        {
-          auth: {
-            Username: 'Fabian@sedme.com',
-            Password: '12345678',
-          },
-        }
-      )
-      .then((res) => {
-        console.log(res)
-      })
+//   const saveChanges = () => {
+//     axios
+//       .post(`http://3.128.32.140:3000/api/users/`, { ...form })
+//       .then((res) => {
+//         update()
+//         Swal.fire('User saved!', '', 'success')
+//       })
+//   }
+//   const update = () => {
+//     axios
+//       .post(
+//         'http://3.128.32.140:3000/api/auth/sigin',
+//         {},
+//         {
+//           auth: {
+//             Username: 'Fabian@sedme.com',
+//             Password: '12345678',
+//           },
+//         }
+//       )
+//       .then((res) => {
+//         console.log(res)
+//       })
 
     axios.get(`http://3.128.32.140:3000/api/users/`).then((res) => {
       const users = res.data.data
       setUsers(users)
       setFilter(users)
     })
-  }
-  axios.get(`http://3.128.32.140:3000/api/users/`).then((res) => {
-      const users = res.data.data
-      setUsers(users)
-      setFilter(users)
-    })
-    
-  const btnEdit = (user) => {
-    console.log(user)
-    setForm(user)
-    setModal(!modal)
-  }
+ 
+//   }
+ 
+//   const btnEdit = (user) => {
+//     console.log(user)
+//     setForm(user)
+//     setModal(!modal)
+//   }
   return (
     <>
-      <Layout>
+      <Layout path={props.location.pathname}>
         {/* {filter.map((r) => (    */}
             <div className="main">
                 <section className="photoSection">
@@ -94,7 +90,7 @@ const Profile = () => {
                     <input 
                         type="text" 
                         className="firstNameInput" 
-                        value={form.name}
+                        value={user.username}
                         onChange={handleInputChange}
                         name='name'
                     />
@@ -102,7 +98,7 @@ const Profile = () => {
                     <input 
                     type="text" 
                     className="lastNameInput"
-                    value={form.lastname}
+                    value={users.lastname}
                     onChange={handleInputChange}
                     name='lastname'
                     />
@@ -110,7 +106,7 @@ const Profile = () => {
                     <input 
                     type="text" 
                     className="emailInput"
-                    value={form.email}
+                    value={users.email}
                     onChange={handleInputChange}
                     name='email'
                     />
@@ -122,7 +118,7 @@ const Profile = () => {
                     <h3>Biography</h3>
                     <textarea type="text" className="biographyInput" placeholder="Platzi Master Actually Student..."></textarea>
                     <div className="buttonSave">
-                        <button className="saveChanges">Save</button>
+                        <button className="saveChanges" onClick="">Save</button>
                     </div>
                 </div>
             </div>
