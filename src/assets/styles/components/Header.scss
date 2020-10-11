@@ -31,17 +31,60 @@ header {
     border: none;
     cursor: pointer;
   }
-}
-.container-avatar {
-  height: 80%;
-  .avatar {
-    height: 50px;
-    width: 50px;
-    overflow: hidden;
-    border-radius: 50%;
-    margin: auto;
+
+// .container-avatar {
+//   height: 80%;
+  
+//   }
+//   .usuario-avatar {
+//     height: 100%;
+//   }
+  .header__menu {
+      height: 50px;
+      width: 50px;
+      padding: 0;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-right: 50px;
   }
-  .usuario-avatar {
+  .header__menu ul {
+    display: none;
+    list-style: none;
+    margin: 0px 0px 0px -14px;
+    padding: 0px;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+  }
+  
+  .header__menu:hover ul, ul:hover {
+      display: block;
+  }
+  
+  .header__menu li {
+    margin: 10px 0px;
+  }
+  
+  .header__menu li a {
+    color: $text-color;
+    text-decoration: none;
+  }
+  
+  .header__menu li a:hover {
+    display: block;
+    text-decoration: underline;
+  }
+  
+  .header__menu--profile {
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .header__menu--profile img {
+    margin-right: 8px;
     height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
   }
 }
