@@ -16,7 +16,7 @@ function Header({ username }) {
 
   return (
     <>
-      <header className='header'>
+      <header className='mainHeader'>
         <div className='username'>
           <Link to="/profile">{user.username}</Link>
         </div>

@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import '../assets/styles/components/Aside.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../assets/styles/components/Aside.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
   faClipboardList,
@@ -10,13 +10,13 @@ import {
   faChartBar,
   faUsers,
   faQuestionCircle,
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
 
 const Aside = ({ path }) => {
   return (
     <aside>
       <Link to='/'>
-        <h1>SEDME</h1>
+        <h1 className='aside__header'>SEDME</h1>
       </Link>
       <ul>
         <li>
@@ -63,6 +63,6 @@ const Aside = ({ path }) => {
         </li>
       </ul>
     </aside>
-  )
-}
-export default Aside
+  );
+};
+export default Aside;
