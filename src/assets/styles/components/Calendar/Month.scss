@@ -15,10 +15,15 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
-.month-lbl{
-  color:$main-color;
+.month-lbl {
+  color: $main-color;
   text-align: center;
   min-width: 180px;
+}
+.arrow {
+  &:hover {
+    color: $main-color;
+  }
 }
 .calendarHeader {
   background-color: $main-light-color;
