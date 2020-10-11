@@ -5,8 +5,8 @@ import { GlobalContext } from '../reducers'
 import Layout from '../components/Layout';
 import FileUpload from '../components/FileUpload';
 
-import swal from 'sweetalert2';
-import axios from 'axios'
+import Swal from 'sweetalert2';
+import axios from 'axios';
 
 import '../assets/styles/components/Profile.scss';
 import { faFolderMinus } from '@fortawesome/free-solid-svg-icons';
@@ -43,14 +43,39 @@ const Profile = (props) => {
   }
 
   const update = () => {
-    const id = user.id
     axios
       .get(`http://3.128.32.140:3000/api/users/${id}`)
       .then((res) => {
-        console.log(res.data.data)
+        // console.log(res.data.data)
         setForm(res.data.data)
       })
   }
+  // const update = () => {
+  //   axios
+  //     .post(
+  //       'http://3.128.32.140:3000/api/auth/sigin',
+  //       {},
+  //       {
+  //         auth: {
+  //           Username: {username},
+  //           Password: {jwt}
+  //         },
+  //       }
+  //     )
+  //     .then((res) => {
+  //       console.log(res)
+  //     })
+
+  const updateUser = () => {
+    axios
+      .put(`http://3.128.32.140:3000/api/users/${id}`, { ...form})
+        .then((res) => {
+          update()
+          Swal.fire('User Updated!', '', 'success')
+        })
+      }
+      
+  
   // state = {
   //   selectedFile: null
   // }
@@ -118,10 +143,10 @@ const Profile = (props) => {
                       className="biographyInput" 
                       value={form.biography}
                       onChange={handleInputChange}
-                    name='biography'
+                      name='biography'
                     />
                     <div className="buttonSave">
-                        <button className="saveChanges">Save</button>
+                        <button className="saveChanges" onClick={updateUser}>Save</button>
                     </div>
                 </div>
             </div>
@@ -133,10 +158,3 @@ const Profile = (props) => {
 
 export default Profile;
 
-// service firebase.storage {
-//   match /b/{bucket}/o {
-//     match /{allPaths=**} {
-//       allow read, write: if request.auth != null;
-//     }
-//   }
-// }

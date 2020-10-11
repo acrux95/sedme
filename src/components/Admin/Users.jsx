@@ -15,6 +15,7 @@ import Modal from '../Modal'
 const Users = () => {
   const [users, setUsers] = useState([])
   const [modal, setModal] = useState(false)
+  const [modalEdit, setModalEdit] = useState(false)
   const [isNew, setIsNew] = useState(false)
   const [filter, setFilter] = useState([])
   const [form, setForm] = useState({
@@ -39,6 +40,12 @@ const Users = () => {
   const addUser = () => {
     nuevo()
   }
+  const actualizar = () => {
+    setModalEdit(!modalEdit)
+  }
+  // const updUser = () => {
+  //   actualizar()
+  // }
   const handleSearch = (event) => {
     setFilter(users.filter((r) => r.name.includes(event.target.value)))
   }
@@ -84,15 +91,28 @@ const Users = () => {
   }
 
   const delUser = (id) => {
-    axios.delete(`http://3.128.32.140:3000/api/users/${id}`).then((res) => {
+    axios.delete(`http://3.128.32.140:3000/api/users/${id}`)
+    .then((res) => {
       update()
+    })
+  }
+  const updateUser = (id) => {
+    // axios
+    // .post(`http://3.128.32.140:3000/api/users/`, { ...form })
+    // .then((res) => {
+    //   update()
+    axios.put(`http://3.128.32.140:3000/api/users/${id}`,{ ...form })
+    .then((res) => {
+      update()
+      actualizar()
+      Swal.fire('User Updated!', '', 'success')
     })
   }
 
   const btnEdit = (user) => {
     console.log(user)
     setForm(user)
-    setModal(!modal)
+    setModalEdit(!modalEdit)
   }
 
   const btnPath = (user) => {
@@ -154,7 +174,7 @@ const Users = () => {
         type='text'
         onChange={handleSearch}
         name='search'
-        placeholder='Nombre del usuario'
+        placeholder='User name'
       />
       <div className='search__icon'>
         <FontAwesomeIcon icon={faSearch} />
@@ -254,7 +274,63 @@ const Users = () => {
             name='phone'
           />
           <button className='btn' onClick={saveUser}>
-            Guardar
+            Save
+          </button>
+          <br />
+        </div>
+      </Modal>
+      <Modal visible={modalEdit}>
+        <div className='modal-content'>
+          <span className='close' onClick={actualizar}>
+            &times;
+          </span>
+          <h2>Edit User</h2>
+          <span className='label'>Name</span>
+          <input
+            className='input'
+            type='text'
+            value={form.name}
+            onChange={handleInputChange}
+            name='name'
+          />
+          <br />
+          <span className='label'>Lastname</span>
+          <input
+            className='input'
+            type='text'
+            value={form.lastname}
+            onChange={handleInputChange}
+            name='lastname'
+          />
+          <br />
+          <span className='label'>Edad</span>
+          <input
+            className='input'
+            type='text'
+            value={form.age}
+            onChange={handleInputChange}
+            name='age'
+          />
+          <br />
+          <span className='label'>Email</span>
+          <input
+            className='input'
+            type='text'
+            value={form.email}
+            onChange={handleInputChange}
+            name='email'
+          />
+          <br />
+          <span className='label'>Phone</span>
+          <input
+            className='input'
+            type='text'
+            value={form.phone}
+            onChange={handleInputChange}
+            name='phone'
+          />
+          <button className='btn' onClick={updateUser}>
+            Save
           </button>
           <br />
         </div>
