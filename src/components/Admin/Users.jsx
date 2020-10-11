@@ -97,17 +97,14 @@ const Users = () => {
     })
   }
   const updateUser = (id) => {
-    // axios
-    // .post(`http://3.128.32.140:3000/api/users/`, { ...form })
-    // .then((res) => {
-    //   update()
-    axios.put(`http://3.128.32.140:3000/api/users/${id}`,{ ...form })
+    axios
+    .put(`http://3.128.32.140:3000/api/users/`, { ...form })
     .then((res) => {
       update()
       actualizar()
-      Swal.fire('User Updated!', '', 'success')
+      Swal.fire('User Update!', '', 'success')
     })
-  }
+}
 
   const btnEdit = (user) => {
     console.log(user)
@@ -189,7 +186,7 @@ const Users = () => {
           <tr>
             <th>Name</th>
             <th>Lastname</th>
-            <th>Edad</th>
+            <th>Age</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Options</th>
@@ -228,7 +225,7 @@ const Users = () => {
           <span className='close' onClick={nuevo}>
             &times;
           </span>
-          <h2>Nuevo usuario</h2>
+          <h2>New User</h2>
           <span className='label'>Name</span>
           <input
             className='input'
@@ -247,7 +244,7 @@ const Users = () => {
             name='lastname'
           />
           <br />
-          <span className='label'>Edad</span>
+          <span className='label'>Age</span>
           <input
             className='input'
             type='text'
@@ -303,7 +300,7 @@ const Users = () => {
             name='lastname'
           />
           <br />
-          <span className='label'>Edad</span>
+          <span className='label'>Age</span>
           <input
             className='input'
             type='text'

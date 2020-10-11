@@ -7,6 +7,7 @@ import FileUpload from '../components/FileUpload';
 
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import Modal from '../components/Modal'
 
 import '../assets/styles/components/Profile.scss';
 import { faFolderMinus } from '@fortawesome/free-solid-svg-icons';
@@ -14,11 +15,8 @@ import { faFolderMinus } from '@fortawesome/free-solid-svg-icons';
 const Profile = (props) => {
   const [{ loggedUser, user }, dispatch] = useContext(GlobalContext)
   const id = user.id
-  
-  const [userData, setUserData] = useState([])
-//   const [modal, setModal] = useState(false)
-//   const [isNew, setIsNew] = useState(false)
-  const [filter, setFilter] = useState([])
+  let passwd, passwd1
+  const [modal, setModal] = useState(false)
   const [form, setForm] = useState({
     roleid: 1,
     parentuserid: null,
@@ -36,6 +34,7 @@ const Profile = (props) => {
    }, [])
 
   const handleInputChange = (event) => {
+   
     setForm({
       ...form,
       [event.target.name]: event.target.value,
@@ -50,22 +49,7 @@ const Profile = (props) => {
         setForm(res.data.data)
       })
   }
-  // const update = () => {
-  //   axios
-  //     .post(
-  //       'http://3.128.32.140:3000/api/auth/sigin',
-  //       {},
-  //       {
-  //         auth: {
-  //           Username: {username},
-  //           Password: {jwt}
-  //         },
-  //       }
-  //     )
-  //     .then((res) => {
-  //       console.log(res)
-  //     })
-
+ 
   const updateUser = () => {
     axios
       .put(`http://3.128.32.140:3000/api/users/${id}`, { ...form})
@@ -74,8 +58,23 @@ const Profile = (props) => {
           Swal.fire('User Updated!', '', 'success')
         })
       }
-      
+  const btnEditPass = () => {
+    setForm(id)
+    setModal(!modal)
+  }
+    const closeModal = () => {
+    setModal(!modal)
+  }
   
+  const savePassword = () => {
+    (passwd === passwd1)
+    ? updateUser()
+    : Swal.fire('The password is not the same', '', 'warning')
+  }
+  
+
+
+ 
   // state = {
   //   selectedFile: null
   // }
@@ -101,7 +100,9 @@ const Profile = (props) => {
                 <section className="photoSection">
                     <h3>Photo</h3>
                     {/* <input type="file" onChange={fileSelectHandler}/> */}
-                    <img src={form.avatar} alt="Profile Photo" className="perfilPhoto"/>
+                    {/* <img src={form.avatar} alt="Profile Photo" className="perfilPhoto"/> */}
+                    
+            {/* {this.props.onUpload} */}
                     {/* {profilePhoto} */}
                     {/* <button onClick={fileSelectHandler} className="uploadButton">Upload Photo</button> */}
                     <FileUpload />
@@ -133,7 +134,11 @@ const Profile = (props) => {
                     name='email'
                     />
                     <div className="buttonPass">
-                        <button className="password">Change Password</button>
+                        <button 
+                          className="password" 
+                          onClick={() => btnEditPass(id)}>
+                            Change Password
+                        </button>
                     </div>
                 </section>
                 <div className="section biography">
@@ -151,8 +156,38 @@ const Profile = (props) => {
                 </div>
             </div>
         </Layout>
+        <Modal visible={modal}>
+        <div className='modal-content'>
+          <span className='close' onClick={closeModal}>
+            &times;
+          </span>
+          <h2>Change Password</h2>
+          <span className='label'>Type New Password</span>
+          <input
+            className='input'
+            type='password'
+            value={passwd}
+            onChange={handleInputChange}
+            name='password'
+          />
+          <br />
+          <span className='label'>Retype New Password</span>
+          <input
+            className='input'
+            type='password'
+            value={passwd1}
+            onChange={handleInputChange}
+            name='repassword'
+          />
+          <button className='btn' onClick={savePassword}>
+            Save
+          </button>
+          <br />
+        </div>
+      </Modal>
     </>
   )
+
 }  
 
 
