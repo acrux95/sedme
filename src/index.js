@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 // import reducer from './reducers';
 import App from './routes/App';
 
-// const store = createStore(reducer, initialState);
 
 ReactDOM.render(
   // <Provider store={store}>

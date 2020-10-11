@@ -29,10 +29,12 @@ const Calendar = (props) => {
   }
   const leftArrow = () => {
     let newDate = selectedDay.clone()
+    console.log(newDate)
     setSelectedDay(newDate.subtract(1, 'months'))
   }
   const rightArrow = () => {
     let newDate = selectedDay.clone()
+    console.log(newDate)
     setSelectedDay(newDate.add(1, 'months'))
   }
   const updateCalendarDays = () => {
@@ -115,7 +117,7 @@ const Calendar = (props) => {
       dd++
     } while (data.length < 43)
 
-    console.log(data)
+    // console.log(data)
 
     // Se cortan las semanas del mes
     let w1 = data.slice(0, 7)

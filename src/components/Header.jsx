@@ -18,20 +18,22 @@ function Header({ username }) {
     <>
       <header className='mainHeader'>
         <div className='username'>
-          <a href='/'>{user.username}</a>
+          <Link to="/profile">{user.username}</Link>
         </div>
         <div>|</div>
-        <div className='call-to-action'>
+        {/* <div className='call-to-action'>
           <button onClick={logOut} className='enterButton'>
             Sign Out
           </button>
-        </div>
-        <div className='container-avatar'>
-          <div className='avatar'>
-            <Link className='profileLink' to='/profile'>
-              <img src={profile} alt='Usuario' className='usuario-avatar' />
-            </Link>
-          </div>
+        </div> */}
+        <div className="header__menu">
+                <div className="header__menu--profile">
+                  <img src={profile} alt='Usuario' className='usuario-avatar' />
+                </div>
+              <ul>
+                  <li><Link to="/profile">Profile</Link></li>
+                  <li><Link to="/login" onClick={logOut}>Log Out</Link></li>  
+              </ul>
         </div>
       </header>
     </>

@@ -1,6 +1,8 @@
 import React from 'react'
 import '../../assets/styles/components/Calendar/Month.scss'
 
+import Modal from '../Modal'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faArrowRight,
@@ -27,35 +29,36 @@ export default function Month({ data }) {
 
         <div className='week'>
           {data.w1
-            ? data.w1.map((dayData) => <Day data={dayData} />)
+            ? data.w1.map((dayData) => <Day key={dayData.day} data={dayData} />)
             : ''}
         </div>
         <div className='week'>
           {data.w1
-            ? data.w2.map((dayData) => <Day data={dayData} />)
+            ? data.w2.map((dayData) => <Day key={dayData.day} data={dayData} />)
             : ''}
         </div>
         <div className='week'>
           {data.w1
-            ? data.w3.map((dayData) => <Day data={dayData} />)
+            ? data.w3.map((dayData) => <Day key={dayData.day} data={dayData} />)
             : ''}
         </div>
         <div className='week'>
           {data.w1
-            ? data.w4.map((dayData) => <Day data={dayData} />)
+            ? data.w4.map((dayData) => <Day key={dayData.day} data={dayData} />)
             : ''}
         </div>
         <div className='week'>
           {data.w1
-            ? data.w5.map((dayData) => <Day data={dayData} />)
+            ? data.w5.map((dayData) => <Day key={dayData.day} data={dayData} />)
             : ''}
         </div>
         <div className='week'>
           {data.w1
-            ? data.w6.map((dayData) => <Day data={dayData} />)
+            ? data.w6.map((dayData) => <Day key={dayData.day} data={dayData} />)
             : ''}
         </div>
       </div>
+      <Modal></Modal>
     </>
   )
 }

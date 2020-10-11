@@ -20,13 +20,13 @@ const Aside = ({ path }) => {
       </Link>
       <ul>
         <li>
-          <Link to='/' class={path === '/' ? 'active' : ''}>
+          <Link to='/' className={path === '/' ? 'active' : ''}>
             <FontAwesomeIcon icon={faHome} />
             <p>Home</p>
           </Link>
         </li>
         <li>
-          <Link to='/learning' class={path === '/learning' ? 'active' : ''}>
+          <Link to='/learning' className={path === '/learning' ? 'active' : ''}>
             <FontAwesomeIcon icon={faClipboardList} />
             <p>Learning Path</p>
           </Link>
@@ -38,25 +38,25 @@ const Aside = ({ path }) => {
           </Link>
         </li> */}
         <li>
-          <Link to='/calendar' class={path === '/calendar' ? 'active' : ''}>
+          <Link to='/calendar' className={path === '/calendar' ? 'active' : ''}>
             <FontAwesomeIcon icon={faCalendarAlt} />
             <p>Calendar</p>
           </Link>
         </li>
         <li>
-          <Link to='/goals' class={path === '/goals' ? 'active' : ''}>
+          <Link to='/goals' className={path === '/goals' ? 'active' : ''}>
             <FontAwesomeIcon icon={faChartBar} />
             <p>Goals of the week</p>
           </Link>
         </li>
         <li>
-          <Link to='/admin' class={path === '/admin' ? 'active' : ''}>
+          <Link to='/admin' className={path === '/admin' ? 'active' : ''}>
             <FontAwesomeIcon icon={faUsers} />
             <p>Users</p>
           </Link>
         </li>
         <li>
-          <Link to='/help' class={path === '/help' ? 'active' : ''}>
+          <Link to='/help' className={path === '/help' ? 'active' : ''}>
             <FontAwesomeIcon icon={faQuestionCircle} />
             <p>Help </p>
           </Link>

@@ -1,75 +1,77 @@
-import React from 'react';
-import swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
-import Layout from '../components/Layout';
+import React, {useContext} from 'react'
+import swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
+import Layout from '../components/Layout'
+import Example from '../components/PieChart'
+import ExampleLine from '../components/LineChart'
+import { GlobalContext } from '../reducers'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faSmileWink,
+} from '@fortawesome/free-solid-svg-icons'
 
-import '../assets/styles/components/Home.scss';
+import '../assets/styles/components/Home.scss'
 
 const Home = (props) => {
-  const showAlert = () => {
-    swal.fire('Hola mundo', 'body');
-  };
-  const showAlert2 = () => {
-    swal.fire({
-      title: 'Evento programado',
-      icon: 'success',
-      timer: 1500,
-      showConfirmButton: false,
-    });
-  };
-  const showAlert3 = () => {
-    swal.fire({
-      title: 'Error al guardar',
-      text: 'Descripcion del error',
-      icon: 'error',
-    });
-  };
-  const showAlert4 = () => {
-    swal.fire({
-      title: 'Alerta',
-      text: 'Ya tienes un avento programado',
-      icon: 'warning',
-    });
-  };
-
+  const [{ loggedUser, user }, dispatch] = useContext(GlobalContext)
   return (
     <>
       <Layout path={props.location.pathname}>
-        {/* <Alert></Alert> */}
-        <h1 className='PageTitle'>Hola otra vez Leomaris!</h1>
+        <h1 className='PageTitle'>
+          Welcome back {user.username}! &nbsp;
+          <FontAwesomeIcon className='main-color' icon={faSmileWink} />
+        </h1>
+
         <div className='inisigthContainer'>
           <div className='insigth'>
-            <h3>Completados</h3>
-            <p className='insithMain'>23 Cursos</p>
-            <div className=' progress'>
-              <div className='progressCompleted progressCompletados'></div>
-            </div>
+            <h3>Goals completed</h3>
+            <Example></Example>
           </div>
+
           <div className='insigth'>
-            <h3>Pendientes</h3>
-            <p className='insithMain'>20 Cursos</p>
-            <div className=' progress'>
-              <div className='progressCompleted '></div>
-            </div>
+            <h3>Pending courses</h3>
+            <ul>
+              <li>
+                {' '}
+                <a href=''>Curso X</a>{' '}
+              </li>
+              <li>
+                {' '}
+                <a href=''>Curso Y</a>{' '}
+              </li>
+              <li>
+                {' '}
+                <a href=''>Curso Z</a>{' '}
+              </li>
+            </ul>
           </div>
+
           <div className='insigth'>
-            <h3>Progreso Total</h3>
-            <p className='insithMain'>54%</p>
-            <div className='progress'>
-              <div className='progressCompleted'></div>
-            </div>
+            <h3>Course trend per week</h3>
+            <ExampleLine></ExampleLine>
           </div>
+
           <div className='insigth'>
-            <h3>Semanas pendientes</h3>
-            <p className='insithMain'>5</p>
-            <div className=' progress'>
-              <div className='progressCompleted progressSemanas'></div>
-            </div>
+            <h3>Pending activities</h3>
+            <ul>
+              <li>
+                {' '}
+                <a href=''>Actividad X</a>{' '}
+              </li>
+              <li>
+                {' '}
+                <a href=''>Actividad Y</a>{' '}
+              </li>
+              <li>
+                {' '}
+                <a href=''>Actividad Z</a>{' '}
+              </li>
+            </ul>
           </div>
         </div>
       </Layout>
     </>
   )
-};
+}
 
-export default Home;
+export default Home
