@@ -1,0 +1,90 @@
+@import '../Vars.scss';
+
+.editLP {
+  // width: 750px;
+  // height: 77vh;
+  background-color: $white-color;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  &__header {
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    .listOfWeeks {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .week {
+      padding: 20px;
+      border: 1px solid $colorBorder1;
+      display: flex;
+      flex-direction: column;
+      &__title {
+        font-size: 26px;
+        margin: 5px;
+      }
+      &__header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .duration {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .courseList {
+        list-style: none;
+        .courseSelector {
+          display: flex;
+          justify-content: space-between;
+          padding: 5px;
+          line-height: 1.1;
+        }
+      }
+    }
+  }
+  .courseName {
+    margin: 2px 0;
+  }
+  .close-btn {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0px;
+  }
+  .add-btn-lp {
+    max-width: 120px;
+    height: 45px;
+  }
+  .edit-btn {
+    max-width: 120px;
+    height: 35px;
+    margin: 0 10px;
+    padding: 2px 5px;
+    background-color: transparent;
+    color: $main-color;
+    border: none;
+    &:hover {
+      color: white;
+    }
+  }
+  .delete-btn {
+    max-width: 120px;
+    height: 35px;
+    margin: 0 10px;
+    padding: 2px 5px;
+    background-color: transparent;
+    color: $second-color;
+    border: none;
+    &:hover {
+      color: white;
+      background-color: $second-color;
+    }
+  }
+}
