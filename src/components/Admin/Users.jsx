@@ -98,7 +98,7 @@ const Users = () => {
   }
   const updateUser = (id) => {
     axios
-    .put(`http://3.128.32.140:3000/api/users/`, { ...form })
+    .post(`http://3.128.32.140:3000/api/users/`, { ...form })
     .then((res) => {
       update()
       actualizar()
