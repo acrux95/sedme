@@ -5,6 +5,7 @@ import Header from './Header';
 import Aside from './Aside';
 import Footer from './Footer';
 //Assets
+import 'antd/dist/antd.css';
 import '../assets/styles/components/Layout.scss';
 
 const Layout = (props) => (

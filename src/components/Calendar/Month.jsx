@@ -12,8 +12,6 @@ import {
 import Day from './Day'
 
 export default function Month({ data }) {
-  console.log(data)
-
   return (
     <>
       <div className='month'>
@@ -58,7 +56,7 @@ export default function Month({ data }) {
             : ''}
         </div>
       </div>
-      <Modal></Modal>
+
     </>
   )
 }

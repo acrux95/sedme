@@ -10,7 +10,7 @@ const Modal = (props) => {
             {props.children}
           </div>
         ) : (
-          <div>Hola</div>
+          <div> </div>
         )}
       </div>
     </>

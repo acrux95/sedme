@@ -1,16 +1,16 @@
 import React from 'react';
 
-function CourseCard({ goal }) {
+function CourseCard({ activity }) {
   return (
     <>
       <div className='course-box'>
         {/* <img src="" alt="Cursos del módulo" /> */}
         <ul>
-          <li>{goal.name} </li>
+          <li>{activity.name} </li>
         </ul>
         <div className='btn-container'>
           <a href='#' className='btn'>
-            Module: {goal.estimatedhours} Hours
+            Module: {activity.TIME} Hours
           </a>
         </div>
       </div>

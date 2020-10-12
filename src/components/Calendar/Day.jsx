@@ -4,10 +4,21 @@ import Swal from 'sweetalert2'
 
 export default function Day({ data }) {
   const handleDay = () => {
+    console.log(data)
     Swal.fire({
       title: `<strong>${data.month} ${data.day}</strong>`,
       icon: 'info',
-      html: `You have ${data.activities.lenght} activities in the day`,
+      html: `You have ${data.activities.length} activities in the day <br>
+      <table>
+        <tbody>
+         <tbody>
+          ${data.activities.map(
+            (r) => ` <tr><td>${r.name}</td><td>${r.description}</td></tr>`
+          )}
+          </tbody>
+        </tbody>
+      </table>
+      `,
       showCloseButton: true,
       showCancelButton: true,
       focusConfirm: false,
@@ -16,7 +27,7 @@ export default function Day({ data }) {
     })
   }
   return (
-    <div 
+    <div
       onClick={handleDay}
       className={data.isCurrent ? 'day cursor' : 'day day-secondary cursor'}
     >

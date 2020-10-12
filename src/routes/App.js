@@ -32,7 +32,7 @@ const App = () => {
 const AppContainer = () => {
   const [{ user }, dispatch] = useContext(GlobalContext)
   console.log(user)
-  if (Object.keys(user).length > 1) {
+  // if (Object.keys(user).length > 1) {
     return (
       <BrowserRouter>
         <Suspense>
@@ -51,17 +51,17 @@ const AppContainer = () => {
         </Suspense>
       </BrowserRouter>
     )
-  } else {
-    return (
-      <BrowserRouter>
-        <Suspense>
-          <Switch>
-            <Route component={Login} />
-          </Switch>
-        </Suspense>
-      </BrowserRouter>
-    )
-  }
+  // } else {
+  //   return (
+  //     <BrowserRouter>
+  //       <Suspense>
+  //         <Switch>
+  //           <Route component={Login} />
+  //         </Switch>
+  //       </Suspense>
+  //     </BrowserRouter>
+  //   )
+  // }
 }
 
 export default App

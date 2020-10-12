@@ -7,10 +7,12 @@ aside {
   height: 100%;
   font-size: 1.2rem;
   position: fixed;
-  a {
+  a,
+  .aside__header {
     color: inherit; /* blue colors for links too */
     text-decoration: inherit; /* no underline */
   }
+  .aside__header,
   h1 {
     text-align: center;
     padding-top: 0;
