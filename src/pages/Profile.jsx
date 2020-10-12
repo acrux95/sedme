@@ -41,12 +41,6 @@ const Profile = (props) => {
     })
   }
 
-<<<<<<< HEAD
-const Profile = () => {
-    
-||||||| b46b7ca
-const Profile = () => {
-=======
   const update = () => {
     axios
       .get(`http://3.128.32.140:3000/api/users/${id}`)
@@ -99,7 +93,7 @@ const Profile = () => {
 //     setForm(user)
 //     setModal(!modal)
 //   }
->>>>>>> master
+
   return (
     <>
       <Layout path={props.location.pathname}>
