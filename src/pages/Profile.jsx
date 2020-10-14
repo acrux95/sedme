@@ -43,7 +43,7 @@ const Profile = (props) => {
 
   const update = () => {
     axios
-      .get(`http://3.128.32.140:3000/api/users/${id}`)
+      .get(`https://3.128.32.140:3000/api/users/${id}`)
       .then((res) => {
         // console.log(res.data.data)
         setForm(res.data.data)

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import firebase from 'firebase';
 
 import '../assets/styles/components/Profile.scss';
@@ -37,7 +36,7 @@ class FileUpload extends Component {
         const file = event.target.files[0];
         const storageRef = firebase.storage().ref(`/upload/${file.name}`);
         const task = storageRef.put(file);
-        const location = `http://sedme-f1392.appspot.com/${storageRef.location.path_}`
+        const location = `https://sedme-f1392.appspot.com/${storageRef.location.path_}`
         console.log(location)
         // console.log(storageRef.location.bucket)
         // console.log(storageRef.location.path_)
@@ -51,7 +50,7 @@ class FileUpload extends Component {
         }, () => {
             this.setState({
                 uploadValue: 100,
-                picture: task.snapshot.getMetadata.downloadURL
+                picture: task.snapshot.getDownloadURL
             });
         });
         
